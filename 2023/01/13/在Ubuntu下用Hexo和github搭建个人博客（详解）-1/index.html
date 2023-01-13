@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>archives | 小赛同学|个人博客</title>
+  <title>在Ubuntu下用Hexo和github搭建个人博客（详解） | 小赛同学|个人博客</title>
 
   <link rel="icon" type="image/jpeg" href="/medias/heada.jpg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -422,123 +422,739 @@
     
 </header>
         <!-- 内容区域 -->
-        <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
-<div class="bg-light-floor-archive" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
-<div class="archive-header" style="background-image:url('https://pic1.zhimg.com/80/v2-1414b3a4b205e19060db18a20d08723a_1440w.jpg?source=1940ef5c')">
-  <div class="archive-header-title">
-    archive
-  </div>
-  <div class="archive-header-desc">
-  
-  <span class="title" id="archive-header-desc"></span>
-  <script>
-  function typedFn() {
-    const el = '#archive-header-desc';
-    const type = 'archive';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
-</script>
-  
-  </div>
-  <div class="mask-box"></div>
-</div>
+        
+ <!-- prismjs 代码高亮 -->
+ 
 
-<div class="archive-video">
-  <video class="full-video" autoplay loop muted>
-      <source style="width: 100%;height: 100vh;" src="/">
-  </video>
-  <div class="video-header-title">
-    archive
-  </div>
-  <div class="video-header-desc">
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('/medias/1.jpg')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
-      <span class="title" id="archive-video-header-desc"></span>
-      <script>
-  function typedFn() {
-    const el = '#archive-video-header-desc';
-    const type = 'archive';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
-</script>
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        在Ubuntu下用Hexo和github搭建个人博客（详解）
+      </span>
+    </div>
+    
+    
       
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> Published in：2023-01-13 |
+        </span>
+      
+
+      
+
+      
+    
   </div>
-  <div class="mask-box"></div>
+  
+  
+    <script src="/js/bubble/bubble.js"></script>
+  
 </div>
 
-<!-- hash算法 -->
 
 
-<div class="archive-main">
-  <section class="archive">
-    <div class="archive-content">
-      <ul class="post-archive">
+
+
+<div class="post-detail-content post-row" 
+  style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h1 id="在Ubuntu下用Hexo和github搭建个人博客（详解）"><a href="#在Ubuntu下用Hexo和github搭建个人博客（详解）" class="headerlink" title="在Ubuntu下用Hexo和github搭建个人博客（详解）"></a>在Ubuntu下用Hexo和github搭建个人博客（详解）</h1><p>用Hexo和github配合，不用写代码就搭建一套属于自己的个人博客网站（小白也可以尝试）</p>
+<p>Hero还提供了大量主题模版供用户下载。你的博客网站将可以时不时的换一种主题风格，赏心悦目，简直完美！</p>
+<p>（一个属于你的世界！一个可供别人访问的个人世界）</p>
+<blockquote>
+<p>Hexo是一个基于 node.js的快速生成静态博客的开源框架,支持 Markdown和大多数 Octopress<br>插件,一个命令即可部署到 Github页面、 Giteee、 Heroku等,强大的APl,可无限扩展,拥有<br>数百个主题和插件。</p>
+</blockquote>
+<h3 id="一、环境准备"><a href="#一、环境准备" class="headerlink" title="一、环境准备"></a>一、环境准备</h3><p>​	因为环境我已经安装过了，所以图片展示安装完成的结果。</p>
+<h4 id="1-安装-node-js"><a href="#1-安装-node-js" class="headerlink" title="1.安装 node.js"></a>1.安装 node.js</h4><p><code>sudo apt-get install nodejs</code></p>
+<p><img src="/home/saisai/.config/Typora/typora-user-images/image-20230113180125853.png" class="lazyload placeholder" data-srcset="/home/saisai/.config/Typora/typora-user-images/image-20230113180125853.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113180125853"></p>
+<blockquote>
+<p>使用apt按装方式可能不会安装nodejs的最新版，如需要用最新版可以到官网下载。</p>
+</blockquote>
+<h4 id="2-安装-git"><a href="#2-安装-git" class="headerlink" title="2.安装 git"></a>2.安装 git</h4><p><code>sudo apt-get install git-core</code></p>
+<p><img src="/home/saisai/.config/Typora/typora-user-images/image-20230113180424353.png" class="lazyload placeholder" data-srcset="/home/saisai/.config/Typora/typora-user-images/image-20230113180424353.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113180424353"></p>
+<h4 id="3-安装-npm"><a href="#3-安装-npm" class="headerlink" title="3.安装 npm"></a>3.安装 npm</h4><p><code>sudo apt-get install npm</code></p>
+<p><img src="/home/saisai/.config/Typora/typora-user-images/image-20230113180611556.png" class="lazyload placeholder" data-srcset="/home/saisai/.config/Typora/typora-user-images/image-20230113180611556.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113180611556"></p>
+<h4 id="4-安装-Hexo"><a href="#4-安装-Hexo" class="headerlink" title="4.安装 Hexo"></a>4.安装 Hexo</h4><p><code>sudo npm install -g hexo-cli</code></p>
+<h4 id="5-检查安装是否正确"><a href="#5-检查安装是否正确" class="headerlink" title="5.检查安装是否正确"></a>5.检查安装是否正确</h4><h5 id="依次输入查询版本命令，若正确显示版本号则表示环境安装成功"><a href="#依次输入查询版本命令，若正确显示版本号则表示环境安装成功" class="headerlink" title="依次输入查询版本命令，若正确显示版本号则表示环境安装成功"></a>依次输入查询版本命令，若正确显示版本号则表示环境安装成功</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line"></span><br><span class="line">git version</span><br><span class="line"></span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<p><img src="/home/saisai/.config/Typora/typora-user-images/image-20230113181531919.png" class="lazyload placeholder" data-srcset="/home/saisai/.config/Typora/typora-user-images/image-20230113181531919.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113181531919"></p>
+<p><code>hexo -v</code></p>
+<p><img src="/home/saisai/.config/Typora/typora-user-images/image-20230113181553428.png" class="lazyload placeholder" data-srcset="/home/saisai/.config/Typora/typora-user-images/image-20230113181553428.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113181553428"></p>
+<h3 id="二、环境初始化"><a href="#二、环境初始化" class="headerlink" title="二、环境初始化"></a>二、环境初始化</h3><h4 id="1-创建本地博客目录文件夹"><a href="#1-创建本地博客目录文件夹" class="headerlink" title="1.创建本地博客目录文件夹"></a>1.创建本地博客目录文件夹</h4><p><img src="/home/saisai/.config/Typora/typora-user-images/image-20230113181845598.png" class="lazyload placeholder" data-srcset="/home/saisai/.config/Typora/typora-user-images/image-20230113181845598.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113181845598"></p>
+<p><code>cd my_blog</code>进入文件夹，使用<code>npm install</code>命令初始化安装npm</p>
+<p>可以看到我们的hexo站点就已经安装好了，接下来就可以直接启动他了</p>
+<img src="/home/saisai/.config/Typora/typora-user-images/image-20230113182130219.png" class="lazyload placeholder" data-srcset="/home/saisai/.config/Typora/typora-user-images/image-20230113182130219.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113182130219" style="zoom:80%;" />
+
+<h4 id="2-启动本地服务站点"><a href="#2-启动本地服务站点" class="headerlink" title="2.启动本地服务站点"></a>2.启动本地服务站点</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g </span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<p><img src="/home/saisai/.config/Typora/typora-user-images/image-20230113182339740.png" class="lazyload placeholder" data-srcset="/home/saisai/.config/Typora/typora-user-images/image-20230113182339740.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113182339740"></p>
+<p>访问<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> 至此hero就搭建好了。可以在本地访问了</p>
+<p>下图是我更换了主题后的样式，后面会说到。</p>
+<p><img src="/home/saisai/.config/Typora/typora-user-images/image-20230113182414153.png" class="lazyload placeholder" data-srcset="/home/saisai/.config/Typora/typora-user-images/image-20230113182414153.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113182414153"></p>
+<p>到这里我们的个人博客网站本地已经搭建完成，为了能让更多的人看到我们的网站，我们就需要将网站上传到github上。</p>
+<blockquote>
+<p>在国内访问github一直都不太稳定，大家遇到网络问题在所难免，多试几次。</p>
+<p>或者不用github，改用gitte也是一样的操作，但gitee需要实名认证审核才能使用配置Pages服务。这里只说明github方法。</p>
+</blockquote>
+<h3 id="三、在GitHub上建站访问"><a href="#三、在GitHub上建站访问" class="headerlink" title="三、在GitHub上建站访问"></a>三、在GitHub上建站访问</h3><h4 id="1-新建guthub仓库"><a href="#1-新建guthub仓库" class="headerlink" title="1.新建guthub仓库"></a>1.新建guthub仓库</h4><p><strong>仓库名称限制了为你的：用户名+.github.io</strong></p>
+<p>你必须要用这种格式为你的仓库命名</p>
+<p>举例：<img src="/home/saisai/.config/Typora/typora-user-images/image-20230113185300068.png" class="lazyload placeholder" data-srcset="/home/saisai/.config/Typora/typora-user-images/image-20230113185300068.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113185300068"></p>
+<blockquote>
+<p>一定要<strong>建立空仓库，不要有分支存在！！！</strong></p>
+</blockquote>
+<h4 id="2-安装-Hexo-上传插件"><a href="#2-安装-Hexo-上传插件" class="headerlink" title="2.安装 Hexo 上传插件"></a>2.安装 Hexo 上传插件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<h4 id="3、修改hexo配置文件指定仓库路径"><a href="#3、修改hexo配置文件指定仓库路径" class="headerlink" title="3、修改hexo配置文件指定仓库路径"></a>3、修改hexo配置文件指定仓库路径</h4><p>可在文件夹中直接打开文件，也可通过vim直接编辑</p>
+<p>在博客文件夹的根目录下打开<code>_config.yml</code>,在最后修改geploy：部分</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim _config.yml </span><br><span class="line"><span class="comment">#找到（注意空格和对齐）修改如下：</span></span><br><span class="line">deploy:  </span><br><span class="line"><span class="built_in">type</span>: git  </span><br><span class="line">repo: 你的github仓库路径  </span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
+
+<p><img src="/home/saisai/.config/Typora/typora-user-images/image-20230113184855722.png" class="lazyload placeholder" data-srcset="/home/saisai/.config/Typora/typora-user-images/image-20230113184855722.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113184855722"></p>
+<h4 id="4、推送站点到github"><a href="#4、推送站点到github" class="headerlink" title="4、推送站点到github"></a>4、推送站点到github</h4><p>推送命令(上传报错多位网络原因，多上传几次即可)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>推送过程中需要输入你的github用户名和密码。但是在2021年8月14日开始github官方就加强安全访问。不能通过原有账号密码git访问，密码需要用官方的token或者采用ssh公私钥访问。否则会出现：鉴权失败</p>
+<p>所以我们需要获取到自己的仓库所需要的令牌token，当作密码进行操作。</p>
+<blockquote>
+<p>登录github设置setting-&gt;Developer Settings-&gt;Prosonal access tokens 创建一个新token。然后就可以拿这个token当密码输入了。</p>
+</blockquote>
+<p><img src="/home/saisai/.config/Typora/typora-user-images/image-20230113185336545.png" class="lazyload placeholder" data-srcset="/home/saisai/.config/Typora/typora-user-images/image-20230113185336545.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113185336545"></p>
+<p><img src="/home/saisai/.config/Typora/typora-user-images/image-20230113185438815.png" class="lazyload placeholder" data-srcset="/home/saisai/.config/Typora/typora-user-images/image-20230113185438815.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113185438815"></p>
+<p><strong>在设置令牌时，名字随便取，期限建议直接永久，权限全选上。</strong></p>
+<p><strong>密钥生成后保存下来，后期会频繁用到</strong></p>
+<p>继续使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d  <span class="comment">#重新上传，上传过程中输入github的用户名和刚刚生成的密钥</span></span><br></pre></td></tr></table></figure>
+
+<p>如果出现错误（没有则跳过）：<img src="/home/saisai/.config/Typora/typora-user-images/image-20230113190251115.png" class="lazyload placeholder" data-srcset="/home/saisai/.config/Typora/typora-user-images/image-20230113190251115.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113190251115"></p>
+<blockquote>
+<p>在git创建项目时出现，<br>是因为在创建git文件夹的时候信息不完善导致的</p>
+</blockquote>
+<p>只需要Run</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email <span class="string">&quot;you@example.com&quot;</span> <span class="comment">#注册github 的邮箱</span></span><br><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span> <span class="comment">#github用户名</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="5-推送完成尝试访问"><a href="#5-推送完成尝试访问" class="headerlink" title="5.推送完成尝试访问"></a>5.推送完成尝试访问</h4><p><img src="/home/saisai/.config/Typora/typora-user-images/image-20230113190708862.png" class="lazyload placeholder" data-srcset="/home/saisai/.config/Typora/typora-user-images/image-20230113190708862.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113190708862"></p>
+<p>输入你的仓库名称,即可访问成功。</p>
+<p>尝试访问<a target="_blank" rel="noopener" href="https://alexander798798.github.io/">https://alexander798798.github.io/</a></p>
+<p>到这里我们的个人博客网页就算搭建完成了。下一步就是更换自己喜欢的主题和动手写第一篇自己的博客了。</p>
+<p>感谢观看！！</p>
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/web/" class="">
+              web
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>author:  </strong>小赛</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>link:  </strong>
+    <a href="/2023/01/13/在Ubuntu下用Hexo和github搭建个人博客（详解）-1/" target="_blank" title="在Ubuntu下用Hexo和github搭建个人博客（详解）">http://example.com/2023/01/13/在Ubuntu下用Hexo和github搭建个人博客（详解）-1/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>Copyright notice:   </strong>
+      All articles on this website, unless otherwise stated, adopt <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      reprint policy. If reproduced, please indicate source!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+    </div>
+    <a href="/2023/01/13/hello-world/" class="post-nav-link">
+      <div class="title">
+        Next: <i class="fas fa-angle-right"></i>
+        <div class="title-text">Hello World</div>
+      </div>
+      <!-- <div class="content">
+        Welcome to Hexo! This is your very first post. Check documen
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-show="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-show="visible">
+      <div class="donate-box_close">
+        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
+          <img src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
+          <img src="/medias/2.jpg" class="lazyload placeholder" data-srcset="/medias/2.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        // console.log('aa', $('.main-content'));
+        body.style.cssText = 'overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script src="/js/shareJs/social-share.min.js"></script>
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      
+<section id="comments" style="padding: 1em;"
+	class="animated bounceInUp">
+	<div id="vcomment" class="comment"></div>
+</section>
+<style>
+	#comments {
+		background: rgba(255,255,255,0.9);
+	}
+	#veditor {
+		background-image: url('https://img.zcool.cn/community/01a253594c71cfa8012193a329a77f.gif');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: right;
+		background-color: rgba(255, 255, 255, 0);
+		resize: vertical;
+	}
+	#veditor:focus{
+		background-position-y: 200px;
+		transition: all 0.2s ease-in-out 0s;
+	}
+	#vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
+		background-color: #42b983;
+	}
+	.v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
+		color: #42b983;
+		border-color: #42b983;
+	}
+	#vcomment .vcards .vcard .vhead .vsys i {
+		display: none;
+	}
+	/* 底部valine链接 */
+	#vcomment .vpower {
+		display: none;
+	}
+	
+	/* 底下注释是修改 名称和邮箱和网址输入框的样式 */
+	/* #vcomment .vheader {
+		display: flex;
+		justify-content: space-around;
+	}
+	
+	#vcomment .vheader .vnick {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vmail {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vlink {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	} */
+
+	img.vimg {
+		transition: all 1s;
+		/* 头像旋转时间为 1s */
+	}
+
+	img.vimg:hover {
+		transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+	}
+
+	#vcomment .vcards .vcard {
+		padding: 15px 20px 0 20px;
+		border-radius: 10px;
+		margin-bottom: 15px;
+		box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
+		transition: all .3s
+	}
+
+	#vcomment .vcards .vcard:hover {
+		box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
+	}
+
+	#vcomment .vcards .vcard .vh .vcard {
+		border: none;
+		box-shadow: none;
+	}
+</style>
+    
+  </div>
+
+<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  
+<aside id='l_side'>
+  
+    
+      
+        <section class="widget side_blogger">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box circle' target="_blank" rel="noopener" href='http://wangsaisai.uovou.cn/'>
+          <img src='/medias/heada.jpg'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+          <h2>小赛 同学</h2>
         
         
+          <p>小赛同学在努力</p>
+
+        
+        
+          <p><span id="jinrishici-sentence">小赛同学|个人博客</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
           
-            
-            <div class="year" data-aos="zoom-in-up">
-                <div class="bullet"></div>
-                <a href="/archives/2023">2023</a>
-            </div>
+            <a href="http://wangsaisai.uovou.cn/"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
           
-          <li class="post-item" data-aos="fade-left">
+        
+          
+            <a href="/vipwsai@163.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/Alexander798798"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=725519278"
+              class="social fab fa-qq flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+      
+    
+  
+  
+  
+
+  <div class="layout_sticky">    
+    
+      
+<section class="widget side_toc">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9C%A8Ubuntu%E4%B8%8B%E7%94%A8Hexo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E8%AF%A6%E8%A7%A3%EF%BC%89"><span class="toc-text">在Ubuntu下用Hexo和github搭建个人博客（详解）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="toc-text">一、环境准备</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85-node-js"><span class="toc-text">1.安装 node.js</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85-git"><span class="toc-text">2.安装 git</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%AE%89%E8%A3%85-npm"><span class="toc-text">3.安装 npm</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%AE%89%E8%A3%85-Hexo"><span class="toc-text">4.安装 Hexo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E6%A3%80%E6%9F%A5%E5%AE%89%E8%A3%85%E6%98%AF%E5%90%A6%E6%AD%A3%E7%A1%AE"><span class="toc-text">5.检查安装是否正确</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BE%9D%E6%AC%A1%E8%BE%93%E5%85%A5%E6%9F%A5%E8%AF%A2%E7%89%88%E6%9C%AC%E5%91%BD%E4%BB%A4%EF%BC%8C%E8%8B%A5%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%89%88%E6%9C%AC%E5%8F%B7%E5%88%99%E8%A1%A8%E7%A4%BA%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F"><span class="toc-text">依次输入查询版本命令，若正确显示版本号则表示环境安装成功</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%8E%AF%E5%A2%83%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-text">二、环境初始化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA%E6%9C%AC%E5%9C%B0%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">1.创建本地博客目录文件夹</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%90%AF%E5%8A%A8%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E7%AB%99%E7%82%B9"><span class="toc-text">2.启动本地服务站点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%9C%A8GitHub%E4%B8%8A%E5%BB%BA%E7%AB%99%E8%AE%BF%E9%97%AE"><span class="toc-text">三、在GitHub上建站访问</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%96%B0%E5%BB%BAguthub%E4%BB%93%E5%BA%93"><span class="toc-text">1.新建guthub仓库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85-Hexo-%E4%B8%8A%E4%BC%A0%E6%8F%92%E4%BB%B6"><span class="toc-text">2.安装 Hexo 上传插件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81%E4%BF%AE%E6%94%B9hexo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%8C%87%E5%AE%9A%E4%BB%93%E5%BA%93%E8%B7%AF%E5%BE%84"><span class="toc-text">3、修改hexo配置文件指定仓库路径</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%E3%80%81%E6%8E%A8%E9%80%81%E7%AB%99%E7%82%B9%E5%88%B0github"><span class="toc-text">4、推送站点到github</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E6%8E%A8%E9%80%81%E5%AE%8C%E6%88%90%E5%B0%9D%E8%AF%95%E8%AE%BF%E9%97%AE"><span class="toc-text">5.推送完成尝试访问</span></a></li></ol></li></ol></li></ol></li></ol> -->
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
+
+      
+  <section class="widget side_recent_post">
+    
+  <header>
+    
+      <a style="color: " href='/tags/'><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class='name'>最新文章</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      
+      <!-- hash算法 -->
+      
+      <div class="aside-list">
+        
+          <div class="aside-list-item">
             
+            
+            
+
             <div class="post-img-box">
               <a href="/2023/01/13/%E5%9C%A8Ubuntu%E4%B8%8B%E7%94%A8Hexo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E8%AF%A6%E8%A7%A3%EF%BC%89-1/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
               <div>
-                <span class="post-date">01-13</span>
+                
+                  <span class="post-date">01-13</span>
+                
               </div>
               <a class="post-title" href="/2023/01/13/%E5%9C%A8Ubuntu%E4%B8%8B%E7%94%A8Hexo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E8%AF%A6%E8%A7%A3%EF%BC%89-1/">在Ubuntu下用Hexo和github搭建个人博客（详解）</a>
             </div>
-          </li>
+          </div>
         
-          
-          <li class="post-item" data-aos="fade-left">
+          <div class="aside-list-item">
             
+            
+            
+
             <div class="post-img-box">
               <a href="/2023/01/13/hello-world/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
               <div>
-                <span class="post-date">01-13</span>
+                
+                  <span class="post-date">01-13</span>
+                
               </div>
               <a class="post-title" href="/2023/01/13/hello-world/">Hello World</a>
             </div>
-          </li>
+          </div>
         
-      </ul>
+      </div>
     </div>
   </section>
-  <div class="w-70">
+
     
   </div>
+</aside>
+
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script src="/js/wrapImage.js"></script>
 </div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
+	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
 
       </main>
     </div>
