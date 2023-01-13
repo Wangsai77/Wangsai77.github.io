@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>Tags | 小赛同学|个人博客</title>
+  <title>小赛同学|个人博客</title>
 
   <link rel="icon" type="image/jpeg" href="/medias/heada.jpg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -436,14 +436,14 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/medias/12.jpg')">
+  background-position: center center;position: relative;background-image:url('/medias/1.jpg')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        tags
+        
       </span>
     </div>
     
@@ -474,7 +474,85 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        
+        <h1 id="在Ubuntu下用Hexo和github搭建个人博客（详解）"><a href="#在Ubuntu下用Hexo和github搭建个人博客（详解）" class="headerlink" title="在Ubuntu下用Hexo和github搭建个人博客（详解）"></a>在Ubuntu下用Hexo和github搭建个人博客（详解）</h1><p>用Hexo和github配合，不用写代码就搭建一套属于自己的个人博客网站（小白也可以尝试）</p>
+<p>Hero还提供了大量主题模版供用户下载。你的博客网站将可以时不时的换一种主题风格，赏心悦目，简直完美！</p>
+<p>（一个属于你的世界！一个可供别人访问的个人世界）</p>
+<blockquote>
+<p>Hexo是一个基于 node.js的快速生成静态博客的开源框架,支持 Markdown和大多数 Octopress<br> 插件,一个命令即可部署到 Github页面、 Giteee、 Heroku等,强大的APl,可无限扩展,拥有<br> 数百个主题和插件。</p>
+</blockquote>
+<h3 id="一、环境准备"><a href="#一、环境准备" class="headerlink" title="一、环境准备"></a>一、环境准备</h3><p>​	因为环境我已经安装过了，所以图片展示安装完成的结果。</p>
+<h4 id="1-安装-node-js"><a href="#1-安装-node-js" class="headerlink" title="1.安装 node.js"></a>1.安装 node.js</h4><p><code>sudo apt-get install nodejs</code></p>
+<p><img src="/home/saisai/.config/Typora/typora-user-images/image-20230113180125853.png" class="lazyload placeholder" data-srcset="/home/saisai/.config/Typora/typora-user-images/image-20230113180125853.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113180125853"></p>
+<blockquote>
+<p>使用apt按装方式可能不会安装nodejs的最新版，如需要用最新版可以到官网下载。</p>
+</blockquote>
+<h4 id="2-安装-git"><a href="#2-安装-git" class="headerlink" title="2.安装 git"></a>2.安装 git</h4><p><code>sudo apt-get install git-core</code></p>
+<p><img src="/home/saisai/.config/Typora/typora-user-images/image-20230113180424353.png" class="lazyload placeholder" data-srcset="/home/saisai/.config/Typora/typora-user-images/image-20230113180424353.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113180424353"></p>
+<h4 id="3-安装-npm"><a href="#3-安装-npm" class="headerlink" title="3.安装 npm"></a>3.安装 npm</h4><p><code>sudo apt-get install npm</code></p>
+<p><img src="/home/saisai/.config/Typora/typora-user-images/image-20230113180611556.png" class="lazyload placeholder" data-srcset="/home/saisai/.config/Typora/typora-user-images/image-20230113180611556.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113180611556"></p>
+<h4 id="4-安装-Hexo"><a href="#4-安装-Hexo" class="headerlink" title="4.安装 Hexo"></a>4.安装 Hexo</h4><p><code>sudo npm install -g hexo-cli</code></p>
+<h4 id="5-检查安装是否正确"><a href="#5-检查安装是否正确" class="headerlink" title="5.检查安装是否正确"></a>5.检查安装是否正确</h4><h5 id="依次输入查询版本命令，若正确显示版本号则表示环境安装成功"><a href="#依次输入查询版本命令，若正确显示版本号则表示环境安装成功" class="headerlink" title="依次输入查询版本命令，若正确显示版本号则表示环境安装成功"></a>依次输入查询版本命令，若正确显示版本号则表示环境安装成功</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line"></span><br><span class="line">git version</span><br><span class="line"></span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<p><img src="/home/saisai/.config/Typora/typora-user-images/image-20230113181531919.png" class="lazyload placeholder" data-srcset="/home/saisai/.config/Typora/typora-user-images/image-20230113181531919.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113181531919"></p>
+<p><code>hexo -v</code></p>
+<p><img src="/home/saisai/.config/Typora/typora-user-images/image-20230113181553428.png" class="lazyload placeholder" data-srcset="/home/saisai/.config/Typora/typora-user-images/image-20230113181553428.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113181553428"></p>
+<h3 id="二、环境初始化"><a href="#二、环境初始化" class="headerlink" title="二、环境初始化"></a>二、环境初始化</h3><h4 id="1-创建本地博客目录文件夹"><a href="#1-创建本地博客目录文件夹" class="headerlink" title="1.创建本地博客目录文件夹"></a>1.创建本地博客目录文件夹</h4><p><img src="/home/saisai/.config/Typora/typora-user-images/image-20230113181845598.png" class="lazyload placeholder" data-srcset="/home/saisai/.config/Typora/typora-user-images/image-20230113181845598.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113181845598"></p>
+<p><code>cd my_blog</code>进入文件夹，使用<code>npm install</code>命令初始化安装npm</p>
+<p>可以看到我们的hexo站点就已经安装好了，接下来就可以直接启动他了</p>
+<img src="/home/saisai/.config/Typora/typora-user-images/image-20230113182130219.png" class="lazyload placeholder" data-srcset="/home/saisai/.config/Typora/typora-user-images/image-20230113182130219.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113182130219" style="zoom:80%;" />
+
+<h4 id="2-启动本地服务站点"><a href="#2-启动本地服务站点" class="headerlink" title="2.启动本地服务站点"></a>2.启动本地服务站点</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g </span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<p><img src="/home/saisai/.config/Typora/typora-user-images/image-20230113182339740.png" class="lazyload placeholder" data-srcset="/home/saisai/.config/Typora/typora-user-images/image-20230113182339740.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113182339740"></p>
+<p>访问<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> 至此hero就搭建好了。可以在本地访问了</p>
+<p>下图是我更换了主题后的样式，后面会说到。</p>
+<p><img src="/home/saisai/.config/Typora/typora-user-images/image-20230113182414153.png" class="lazyload placeholder" data-srcset="/home/saisai/.config/Typora/typora-user-images/image-20230113182414153.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113182414153"></p>
+<p>到这里我们的个人博客网站本地已经搭建完成，为了能让更多的人看到我们的网站，我们就需要将网站上传到github上。</p>
+<blockquote>
+<p>在国内访问github一直都不太稳定，大家遇到网络问题在所难免，多试几次。</p>
+<p>或者不用github，改用gitte也是一样的操作，但gitee需要实名认证审核才能使用配置Pages服务。这里只说明github方法。</p>
+</blockquote>
+<h3 id="三、在GitHub上建站访问"><a href="#三、在GitHub上建站访问" class="headerlink" title="三、在GitHub上建站访问"></a>三、在GitHub上建站访问</h3><h4 id="1-新建guthub仓库"><a href="#1-新建guthub仓库" class="headerlink" title="1.新建guthub仓库"></a>1.新建guthub仓库</h4><p><strong>仓库名称限制了为你的：用户名+.github.io</strong></p>
+<p>你必须要用这种格式为你的仓库命名</p>
+<p>举例：<img src="/home/saisai/.config/Typora/typora-user-images/image-20230113185300068.png" class="lazyload placeholder" data-srcset="/home/saisai/.config/Typora/typora-user-images/image-20230113185300068.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113185300068"></p>
+<blockquote>
+<p>一定要<strong>建立空仓库，不要有分支存在！！！</strong></p>
+</blockquote>
+<h4 id="2-安装-Hexo-上传插件"><a href="#2-安装-Hexo-上传插件" class="headerlink" title="2.安装 Hexo 上传插件"></a>2.安装 Hexo 上传插件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<h4 id="3、修改hexo配置文件指定仓库路径"><a href="#3、修改hexo配置文件指定仓库路径" class="headerlink" title="3、修改hexo配置文件指定仓库路径"></a>3、修改hexo配置文件指定仓库路径</h4><p>可在文件夹中直接打开文件，也可通过vim直接编辑</p>
+<p>在博客文件夹的根目录下打开<code>_config.yml</code>,在最后修改geploy：部分</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim _config.yml </span><br><span class="line">#找到（注意空格和对齐）修改如下：</span><br><span class="line">deploy:  </span><br><span class="line">type: git  </span><br><span class="line">repo: 你的github仓库路径  </span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
+
+<p><img src="/home/saisai/.config/Typora/typora-user-images/image-20230113184855722.png" class="lazyload placeholder" data-srcset="/home/saisai/.config/Typora/typora-user-images/image-20230113184855722.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113184855722"></p>
+<h4 id="4、推送站点到github"><a href="#4、推送站点到github" class="headerlink" title="4、推送站点到github"></a>4、推送站点到github</h4><p>推送命令(上传报错多位网络原因，多上传几次即可)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>推送过程中需要输入你的github用户名和密码。但是在2021年8月14日开始github官方就加强安全访问。不能通过原有账号密码git访问，密码需要用官方的token或者采用ssh公私钥访问。否则会出现：鉴权失败</p>
+<p>所以我们需要获取到自己的仓库所需要的令牌token，当作密码进行操作。</p>
+<blockquote>
+<p>登录github设置setting-&gt;Developer Settings-&gt;Prosonal access tokens 创建一个新token。然后就可以拿这个token当密码输入了。</p>
+</blockquote>
+<p><img src="/home/saisai/.config/Typora/typora-user-images/image-20230113185336545.png" class="lazyload placeholder" data-srcset="/home/saisai/.config/Typora/typora-user-images/image-20230113185336545.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113185336545"></p>
+<p><img src="/home/saisai/.config/Typora/typora-user-images/image-20230113185438815.png" class="lazyload placeholder" data-srcset="/home/saisai/.config/Typora/typora-user-images/image-20230113185438815.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113185438815"></p>
+<p><strong>在设置令牌时，名字随便取，期限建议直接永久，权限全选上。</strong></p>
+<p><strong>密钥生成后保存下来，后期会频繁用到</strong></p>
+<p>继续使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d  #重新上传，上传过程中输入github的用户名和刚刚生成的密钥</span><br></pre></td></tr></table></figure>
+
+<p>如果出现错误（没有则跳过）：<img src="/home/saisai/.config/Typora/typora-user-images/image-20230113190251115.png" class="lazyload placeholder" data-srcset="/home/saisai/.config/Typora/typora-user-images/image-20230113190251115.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113190251115"></p>
+<blockquote>
+<p>在git创建项目时出现，<br> 是因为在创建git文件夹的时候信息不完善导致的</p>
+</blockquote>
+<p>只需要Run</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email &quot;you@example.com&quot; #注册github 的邮箱</span><br><span class="line">git config --global user.name &quot;Your Name&quot; #github用户名</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-推送完成尝试访问"><a href="#5-推送完成尝试访问" class="headerlink" title="5.推送完成尝试访问"></a>5.推送完成尝试访问</h4><p><img src="/home/saisai/.config/Typora/typora-user-images/image-20230113190708862.png" class="lazyload placeholder" data-srcset="/home/saisai/.config/Typora/typora-user-images/image-20230113190708862.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113190708862"></p>
+<p>输入你的仓库名称,即可访问成功。</p>
+<p>尝试访问<a target="_blank" rel="noopener" href="https://alexander798798.github.io/">https://alexander798798.github.io/</a></p>
+<p>到这里我们的个人博客网页就算搭建完成了。下一步就是更换自己喜欢的主题和动手写第一篇自己的博客了。</p>
+<p>感谢观看！！</p>
+
       </div>
       <div class="post-tags-categories">
         
@@ -487,7 +565,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/tags/index.html" target="_blank" title="tags">http://example.com/tags/index.html</a>
+    <a href="/2023/01/13/在Ubuntu下用Hexo和github搭建个人博客（详解）/" target="_blank" title="">http://example.com/2023/01/13/在Ubuntu下用Hexo和github搭建个人博客（详解）/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -506,6 +584,23 @@
 
 
 
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+    </div>
+    <a href="/2023/01/13/hello-world/" class="post-nav-link">
+      <div class="title">
+        Next: <i class="fas fa-angle-right"></i>
+        <div class="title-text">Hello World</div>
+      </div>
+      <!-- <div class="content">
+        Welcome to Hexo! This is your very first post. Check documen
+      </div> -->
+    </a>
+  </div>
 
 </div>
 
@@ -808,13 +903,29 @@
   <div class="layout_sticky">    
     
       
-        
+<section class="widget side_toc">
   
-      
-      
-        
-  
-      
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9C%A8Ubuntu%E4%B8%8B%E7%94%A8Hexo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E8%AF%A6%E8%A7%A3%EF%BC%89"><span class="toc-text">在Ubuntu下用Hexo和github搭建个人博客（详解）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="toc-text">一、环境准备</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85-node-js"><span class="toc-text">1.安装 node.js</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85-git"><span class="toc-text">2.安装 git</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%AE%89%E8%A3%85-npm"><span class="toc-text">3.安装 npm</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%AE%89%E8%A3%85-Hexo"><span class="toc-text">4.安装 Hexo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E6%A3%80%E6%9F%A5%E5%AE%89%E8%A3%85%E6%98%AF%E5%90%A6%E6%AD%A3%E7%A1%AE"><span class="toc-text">5.检查安装是否正确</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BE%9D%E6%AC%A1%E8%BE%93%E5%85%A5%E6%9F%A5%E8%AF%A2%E7%89%88%E6%9C%AC%E5%91%BD%E4%BB%A4%EF%BC%8C%E8%8B%A5%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%89%88%E6%9C%AC%E5%8F%B7%E5%88%99%E8%A1%A8%E7%A4%BA%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F"><span class="toc-text">依次输入查询版本命令，若正确显示版本号则表示环境安装成功</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%8E%AF%E5%A2%83%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-text">二、环境初始化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA%E6%9C%AC%E5%9C%B0%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">1.创建本地博客目录文件夹</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%90%AF%E5%8A%A8%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E7%AB%99%E7%82%B9"><span class="toc-text">2.启动本地服务站点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%9C%A8GitHub%E4%B8%8A%E5%BB%BA%E7%AB%99%E8%AE%BF%E9%97%AE"><span class="toc-text">三、在GitHub上建站访问</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%96%B0%E5%BB%BAguthub%E4%BB%93%E5%BA%93"><span class="toc-text">1.新建guthub仓库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85-Hexo-%E4%B8%8A%E4%BC%A0%E6%8F%92%E4%BB%B6"><span class="toc-text">2.安装 Hexo 上传插件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81%E4%BF%AE%E6%94%B9hexo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%8C%87%E5%AE%9A%E4%BB%93%E5%BA%93%E8%B7%AF%E5%BE%84"><span class="toc-text">3、修改hexo配置文件指定仓库路径</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%E3%80%81%E6%8E%A8%E9%80%81%E7%AB%99%E7%82%B9%E5%88%B0github"><span class="toc-text">4、推送站点到github</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E6%8E%A8%E9%80%81%E5%AE%8C%E6%88%90%E5%B0%9D%E8%AF%95%E8%AE%BF%E9%97%AE"><span class="toc-text">5.推送完成尝试访问</span></a></li></ol></li></ol></li></ol></li></ol> -->
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
+
       
   <section class="widget side_recent_post">
     
@@ -877,115 +988,6 @@
     </div>
   </section>
 
-      
-  <section class="widget side_archives">
-    
-    <header><a style="color: red" href='/archives/'><i class="fas fa-archive fa-fw" aria-hidden="true"></i><span class='name'>归档</span></a></header><div class="content"><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/01/"><span class="card-archive-list-date">January 2023</span><span class="card-archive-list-count">2</span></a></li></ul></div>
-  </section>
-
-      <section class="widget side_webinfo">
-  
-  <header>
-    
-      <i style="color: " class="fas fa-chart-line fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>2 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2023/01/10'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-
-      
-
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Fri Jan 13 2023 19:13:38 GMT+0800 (China Standard Time)</div>
-            <div id="last-update-show">2023-01-13 日</div>
-          
-        </div>
-        
-        <script>
-          function timeago(dateTimeStamp) {
-              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
-              var hour = minute * 60;
-              var day = hour * 24;
-              var week = day * 7;
-              var month = day * 30;
-              var now = new Date().getTime(); //获取当前时间毫秒
-              var diffValue = now - dateTimeStamp; //时间差
-              if (diffValue < 0) {
-                  return;
-              }
-              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
-              var hourC = diffValue / hour;
-              var dayC = diffValue / day;
-              var weekC = diffValue / week;
-              var monthC = diffValue / month;
-              if (monthC >= 1 && monthC <= 3) {
-                  result = " " + parseInt(monthC) + " 月前"
-              } else if (weekC >= 1 && weekC <= 3) {
-                  result = " " + parseInt(weekC) + " 周前"
-              } else if (dayC >= 1 && dayC <= 6) {
-                  result = " " + parseInt(dayC) + " 天前"
-              } else if (hourC >= 1 && hourC <= 23) {
-                  result = " " + parseInt(hourC) + " 小时前"
-              } else if (minC >= 1 && minC <= 59) {
-                  result = " " + parseInt(minC) + " 分钟前"
-              } else if (diffValue >= 0 && diffValue <= minute) {
-                  result = "刚刚"
-              } else {
-                  var datetime = new Date();
-                  datetime.setTime(dateTimeStamp);
-                  var Nyear = datetime.getFullYear();
-                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
-                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
-                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
-                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
-                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
-                  result = Nyear + "-" + Nmonth + "-" + Ndate
-              }
-              return result;
-          }
-          var lastUpDate = document.getElementById('last-update').innerHTML;
-          try {
-            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
-          } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2023-01-13 日';
-          }
-        </script>
-        
-      
-    </div>
-  </div>
-</section>
-      
     
   </div>
 </aside>
