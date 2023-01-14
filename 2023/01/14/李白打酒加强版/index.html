@@ -475,15 +475,15 @@
     <article class="post post-detail">
       <div class="post-content">
         <h2 id="蓝桥杯-2022-省-B-李白打酒加强版"><a href="#蓝桥杯-2022-省-B-李白打酒加强版" class="headerlink" title="[蓝桥杯 2022 省 B] 李白打酒加强版"></a>[蓝桥杯 2022 省 B] 李白打酒加强版</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>话说大诗人李白，一生好饮。幸好他从不开车。</p>
-<p>一天，他提着酒显，从家里出来，酒显中有酒 $2$ 斗。他边走边唱：</p>
+<p>一天，他提着酒显，从家里出来，酒显中有酒 <code>2</code> 斗。他边走边唱：</p>
 <blockquote>
 <p>无事街上走，提显去打酒。<br>逢店加一倍，遇花喝一斗。</p>
 </blockquote>
-<p>这一路上，他一共遇到店 $N$ 次, 遇到花 $M$ 次。已知最后一次遇到的是花，他正好把酒喝光了。</p>
+<p>这一路上，他一共遇到店 <code>N</code> 次, 遇到花 <code>M</code> 次。已知最后一次遇到的是花，他正好把酒喝光了。</p>
 <p>请你计算李白这一路遇到店和花的顺序，有多少种不同的可能?</p>
-<p>注意：没酒（$0$ 斗）时遇店是合法的，加倍后还是没酒; 但是没酒时遇花是不合法的。</p>
-<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>第一行包含两个整数 $N$ 和 $M$。</p>
-<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>输出一个整数表示答案。由于答案可能很大，输出模 $1000000007$（即 $10^9+7$）的结果。</p>
+<p>注意：没酒（<code>0</code> 斗）时遇店是合法的，加倍后还是没酒; 但是没酒时遇花是不合法的。</p>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>第一行包含两个整数 <code>N</code> 和 <code>M</code>。</p>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>输出一个整数表示答案。由于答案可能很大，输出模 <code>1000000007</code>（即 <code>10^9+7</code>）的结果。</p>
 <h4 id="样例输入-1"><a href="#样例输入-1" class="headerlink" title="样例输入 #1"></a>样例输入 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">5 10</span><br></pre></td></tr></table></figure>
 
 <h4 id="样例输出-1"><a href="#样例输出-1" class="headerlink" title="样例输出 #1"></a>样例输出 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">14</span><br></pre></td></tr></table></figure>
@@ -494,8 +494,8 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">010101101000000</span><br><span class="line">010110010010000</span><br><span class="line">011000110010000</span><br><span class="line">100010110010000</span><br><span class="line">011001000110000</span><br><span class="line">100011000110000</span><br><span class="line">100100010110000</span><br><span class="line">010110100000100</span><br><span class="line">011001001000100</span><br><span class="line">100011001000100</span><br><span class="line">100100011000100</span><br><span class="line">011010000010100</span><br><span class="line">100100100010100</span><br><span class="line">101000001010100</span><br></pre></td></tr></table></figure>
 
 <p><strong>【评测用例规模与约定】</strong></p>
-<p>对于 $40 %$ 的评测用例: $1 \leq N, M \leq 10$ 。</p>
-<p>对于 $100 %$ 的评测用例: $1 \leq N, M \leq 100$ 。 </p>
+<p>对于 40 %的评测用例: 1 &lt;N, M &lt; 10。</p>
+<p>对于 <code>100 %</code> 的评测用例: <code>1 &lt; N, M &lt; 100</code> 。 </p>
 <p>蓝桥杯 2022 省赛 B 组 I 题。题目分析</p>
 <p>主要是一个DFS深搜，要从n个数中找出任意k个数相加，计算其值是否为素数。</p>
 <ul>
@@ -514,7 +514,6 @@
 <p>va 初始值为 2,要求经过 n+m次操作后 va&#x3D;0的方案数取模。</p>
 <h5 id="2-状态"><a href="#2-状态" class="headerlink" title="2.状态"></a>2.状态</h5><p>​    状态设计：dp[i][j][k]的值表示遇到i家店，j朵花，酒壶中还剩k斗酒的可能情况数；<br>​    <strong>状态转移方程：dp[i][j][k]&#x3D;dp[i-1][j][k&#x2F;2](i&gt;1&amp;&amp;k%2&#x3D;&#x3D;0) + dp[i][j-1][k+1](j&gt;1);</strong><br>​    边界设计：除了dp[0][0][2]&#x3D;1，其他元素全为0；<br>​    他一共遇到店 N 次，遇到花 M 次。已知最后一次遇到的是花， 他正好把酒喝光了；所以<br>​    最后一次肯定遇到的是花，那么最后的结果便是dp[N][M-1][1];<br>​    并且酒壶中酒的容量不能超过M；</p>
 <h3 id="程序如下："><a href="#程序如下：" class="headerlink" title="程序如下："></a>程序如下：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> mod=<span class="number">1e9</span>+<span class="number">7</span>;<span class="comment">//别忘记取模</span></span><br><span class="line"><span class="type">int</span> n,m,dp[<span class="number">105</span>][<span class="number">105</span>][<span class="number">105</span>];<span class="comment">//dp数组</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    dp[<span class="number">0</span>][<span class="number">0</span>][<span class="number">2</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;=m<span class="number">-1</span>;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(i==<span class="number">0</span>&amp;&amp;j==<span class="number">0</span>) </span><br><span class="line">                <span class="keyword">continue</span>; </span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> k=<span class="number">0</span>;k&lt;=<span class="number">100</span>;k++)<span class="comment">//因为最多出现100次操作2，故va最大为100</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(k%<span class="number">2</span>==<span class="number">0</span>&amp;&amp;i) </span><br><span class="line">                    dp[i][j][k]+=dp[i<span class="number">-1</span>][j][k/<span class="number">2</span>];<span class="comment">//操作1</span></span><br><span class="line">                <span class="keyword">if</span>(j) </span><br><span class="line">                    dp[i][j][k]+=dp[i][j<span class="number">-1</span>][k+<span class="number">1</span>];<span class="comment">//操作2</span></span><br><span class="line">                dp[i][j][k]%=mod;<span class="comment">//取模</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;dp[n][m<span class="number">-1</span>][<span class="number">1</span>]%mod;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 
 
       </div>
@@ -561,15 +560,15 @@
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/4.jpg" class="lazyload placeholder" data-srcset="/medias/4.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/15.jpg" class="lazyload placeholder" data-srcset="/medias/15.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
     <a href="/2023/01/14/P1880%20%5BNOI1995%5D%20%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/" class="post-nav-link">
       <div class="title">
         Next: <i class="fas fa-angle-right"></i>
-        <div class="title-text">选数【筛法动态规划 dp区间 四边形不等式】</div>
+        <div class="title-text">石子合并[动态规划]</div>
       </div>
       <!-- <div class="content">
-        [NOI1995] 石子合并题目描述在一个圆形操场的四周摆放 $N$ 堆石子，现要将石子有次序地合并成一堆，规定每次只能
+        [NOI1995] 石子合并题目描述在一个圆形操场的四周摆放 N 堆石子，现要将石子有次序地合并成一堆，规定每次只能选相
       </div> -->
     </a>
   </div>
@@ -943,7 +942,7 @@
             <div class="post-img-box">
               <a href="/2023/01/14/P1880%20%5BNOI1995%5D%20%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/4.jpg" class="lazyload placeholder" data-srcset="/medias/4.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/15.jpg" class="lazyload placeholder" data-srcset="/medias/15.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
@@ -952,7 +951,7 @@
                   <span class="post-date">01-14</span>
                 
               </div>
-              <a class="post-title" href="/2023/01/14/P1880%20%5BNOI1995%5D%20%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/">选数【筛法动态规划 dp区间 四边形不等式】</a>
+              <a class="post-title" href="/2023/01/14/P1880%20%5BNOI1995%5D%20%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/">石子合并[动态规划]</a>
             </div>
           </div>
         

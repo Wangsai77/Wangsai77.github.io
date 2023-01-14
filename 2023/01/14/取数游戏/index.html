@@ -474,11 +474,11 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h2 id="取数游戏"><a href="#取数游戏" class="headerlink" title="取数游戏"></a>取数游戏</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>一个$N times M$的由非负整数构成的数字矩阵，你需要在其中取出若干个数字，使得取出的任意两个数字不相邻（若一个数字在另外一个数字相邻$8$个格子中的一个即认为这两个数字相邻），求取出数字和最大是多少。</p>
-<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>第1行有一个正整数$T$，表示了有$T$组数据。</p>
-<p>对于每一组数据，第一行有两个正整数$N$和$M$，表示了数字矩阵为$N$行$M$列。</p>
-<p>接下来$N$行，每行$M$个非负整数，描述了这个数字矩阵。</p>
-<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>$T$行，每行一个非负整数，输出所求得的答案。</p>
+        <h2 id="取数游戏"><a href="#取数游戏" class="headerlink" title="取数游戏"></a>取数游戏</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>一个<code>N * M</code>的由非负整数构成的数字矩阵，你需要在其中取出若干个数字，使得取出的任意两个数字不相邻（若一个数字在另外一个数字相邻<code>8</code>个格子中的一个即认为这两个数字相邻），求取出数字和最大是多少。</p>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>第1行有一个正整数<code>T</code>，表示了有<code>T</code>组数据。</p>
+<p>对于每一组数据，第一行有两个正整数<code>N</code>和<code>M</code>，表示了数字矩阵为<code>N</code>行<code>M</code>列。</p>
+<p>接下来<code>N</code>行，每行<code>M</code>个非负整数，描述了这个数字矩阵。</p>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p><code>T</code>行，每行一个非负整数，输出所求得的答案。</p>
 <h4 id="样例输入-1"><a href="#样例输入-1" class="headerlink" title="样例输入 #1"></a>样例输入 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">4 4</span><br><span class="line">67 75 63 10</span><br><span class="line">29 29 92 14</span><br><span class="line">21 68 71 56</span><br><span class="line">8 67 91 25</span><br><span class="line">2 3</span><br><span class="line">87 70 85</span><br><span class="line">10 3 17</span><br><span class="line">3 3</span><br><span class="line">1 1 1</span><br><span class="line">1 99 1</span><br><span class="line">1 1 1</span><br></pre></td></tr></table></figure>
 
 <h4 id="样例输出-1"><a href="#样例输出-1" class="headerlink" title="样例输出 #1"></a>样例输出 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">271</span><br><span class="line">172</span><br><span class="line">99</span><br></pre></td></tr></table></figure>
@@ -489,10 +489,10 @@
 <p>29 29 [92] 14</p>
 <p>[21] 68 71 56</p>
 <p>8 67 [91] 25</p>
-<p>对于$20%$的数据，$N, M≤3$；</p>
-<p>对于$40%$的数据，$N,M≤4$；</p>
-<p>对于$60%$的数据，$N, M≤5$；</p>
-<p>对于$100%$的数据，$N, M≤6,T≤20$。</p>
+<p>对于<code>20%</code>的数据，<code>N, M≤3</code>；</p>
+<p>对于<code>40%</code>的数据，<code>N,M≤4</code>；</p>
+<p>对于<code>60%</code>的数据，<code>N, M≤5</code>；</p>
+<p>对于<code>100%</code>的数据，<code>N, M≤6,T≤20</code>。</p>
 </blockquote>
 <h3 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h3><h4 id="拿到这道题，首先分析解题算法。"><a href="#拿到这道题，首先分析解题算法。" class="headerlink" title="拿到这道题，首先分析解题算法。"></a><strong>拿到这道题，首先分析解题算法。</strong></h4><p>如果使用贪心法，每次去最大值，那么可以发现有问题。因为每取一个数，相邻的数就不能再取，那么每次决策就会影响下次结果，从而导致贪心决策不能最优化。</p>
 <p>动态规划也是如此，在动态规划中，每一个分步决策不能影响后续结果，所以此算法也排除。</p>
@@ -548,16 +548,16 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/4.jpg" class="lazyload placeholder" data-srcset="/medias/4.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/15.jpg" class="lazyload placeholder" data-srcset="/medias/15.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
     <a href="/2023/01/14/P1880%20%5BNOI1995%5D%20%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> Prev:
-        <div class="title-text">选数【筛法动态规划 dp区间 四边形不等式】</div>
+        <div class="title-text">石子合并[动态规划]</div>
       </div>
       
       <!-- <div class="content">
-        [NOI1995] 石子合并题目描述在一个圆形操场的四周摆放 $N$ 堆石子，现要将石子有次序地合并成一堆，规定每次只能
+        [NOI1995] 石子合并题目描述在一个圆形操场的四周摆放 N 堆石子，现要将石子有次序地合并成一堆，规定每次只能选相
       </div> -->
     </a>
   </div>
@@ -576,7 +576,7 @@
         <div class="title-text">填涂颜色（搜索 广度优先搜索,BFS 队列）</div>
       </div>
       <!-- <div class="content">
-        填涂颜色题目描述由数字 $0$ 组成的方阵中，有一任意形状闭合圈，闭合圈由数字 $1$ 构成，围圈时只走上下左右 $4$
+        填涂颜色题目描述由数字 0 组成的方阵中，有一任意形状闭合圈，闭合圈由数字 1 构成，围圈时只走上下左右 4 个方向。现
       </div> -->
     </a>
   </div>
@@ -950,7 +950,7 @@
             <div class="post-img-box">
               <a href="/2023/01/14/P1880%20%5BNOI1995%5D%20%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/4.jpg" class="lazyload placeholder" data-srcset="/medias/4.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/15.jpg" class="lazyload placeholder" data-srcset="/medias/15.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
@@ -959,7 +959,7 @@
                   <span class="post-date">01-14</span>
                 
               </div>
-              <a class="post-title" href="/2023/01/14/P1880%20%5BNOI1995%5D%20%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/">选数【筛法动态规划 dp区间 四边形不等式】</a>
+              <a class="post-title" href="/2023/01/14/P1880%20%5BNOI1995%5D%20%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/">石子合并[动态规划]</a>
             </div>
           </div>
         
