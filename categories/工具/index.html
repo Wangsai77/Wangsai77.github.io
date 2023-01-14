@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>公交车标价 公交车票价为5角。假设每位乘客只持有两种币值的货币：5角、1元。 | 小赛同学|个人博客</title>
+  <title>category: 工具 | 小赛同学|个人博客</title>
 
   <link rel="icon" type="image/jpeg" href="/medias/heada.jpg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -424,716 +424,165 @@
 </header>
         <!-- 内容区域 -->
         
- <!-- prismjs 代码高亮 -->
- 
 
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
+<div class="bg-light-floor-categoryDetail" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
 
-<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
-
-
-  <!-- 文章详情页顶部图片和标题 -->
-
-
-
-
-<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/medias/9.jpg')">
-  <div class="post-detail-header-mask"></div>
-  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
-  
-  <div class="post-detail-header_info-box">
-    <div class="title-box">
-      <span class="title">
-        公交车标价 公交车票价为5角。假设每位乘客只持有两种币值的货币：5角、1元。
-      </span>
-    </div>
-    
-    
-      
-        <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> Published in：2023-01-13 |
-        </span>
-      
-
-      
-        <span class="post-detail-header_categories">
-          <i class="iconfont iconbookmark1"></i> category：
-          
-            <a href="/categories/%E9%A2%98%E8%A7%A3/" class="post-detail-header_category">
-              题解
-            </a>
-          
-        </span>
-      
-
-      
-    
+<div class="category-header"  style="background-image:url('https://pic3.zhimg.com/80/v2-98dcd81cb0d1fee52a807c13cedb8338_1440w.jpg?source=1940ef5c')">
+  <div class="category-header-title">
+    category
   </div>
-  
-  
-    <script src="/js/bubble/bubble.js"></script>
-  
-</div>
-
-
-
-
-
-<div class="post-detail-content post-row" 
-  style="padding-top: 0px;">
-  <div class="main-content">
-    <article class="post post-detail">
-      <div class="post-content">
-        <h1 id="公交车标价-公交车票价为5角。假设每位乘客只持有两种币值的货币：5角、1元。"><a href="#公交车标价-公交车票价为5角。假设每位乘客只持有两种币值的货币：5角、1元。" class="headerlink" title="公交车标价 公交车票价为5角。假设每位乘客只持有两种币值的货币：5角、1元。"></a>公交车标价 公交车票价为5角。假设每位乘客只持有两种币值的货币：5角、1元。</h1><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>公交车票价为5角。假设每位乘客只持有两种币值的货币：5角、1元。</p>
-<p>再假设持有5角的乘客有m人，持有1元的乘客有n人。</p>
-<p>由于特殊情况，开始的时候，售票员没有零钱可找。我们想知道这m+n名乘客以什么样的顺序购票则可以顺利完成购票过程。</p>
-<p>显然，m &lt; n的时候，无论如何都不能完成，m &gt;&#x3D;n的时候，有些情况也不行。</p>
-<p>比如，第一个购票的乘客就持有1元。</p>
-<p>下面的程序计算出这m+n名乘客所有可能顺利完成购票的不同情况的组合数目。</p>
-<p>注意：只关心5角和1元交替出现的次序的不同排列，持有同样币值的两名乘客交换位置并不算做一种新的情况来计数。</p>
-<blockquote>
-<p>&#x2F;&#x2F;m: 持有5角币的人数</p>
-<p>&#x2F;&#x2F;n: 持有1元币的人数</p>
-<p>&#x2F;&#x2F;返回：所有顺利完成购票过程的购票次序的种类数</p>
-<p>int f(int m, int n)</p>
-<p>{</p>
-<p>​    if(m &lt; n) return 0;</p>
-<p>​    if(n&#x3D;&#x3D;0) return 1;</p>
-<p>​    return _______________________;</p>
-<p>}</p>
-</blockquote>
-<h5 id="小贴士："><a href="#小贴士：" class="headerlink" title="小贴士："></a>小贴士：</h5><ul>
-<li><ol>
-<li>浮点的非精确比较。不能用&#x3D;&#x3D;</li>
-</ol>
-</li>
-<li><p>a. 小于一个临界值</p>
-</li>
-<li><p>b. 转化为整数</p>
-</li>
-<li><ol start="2">
-<li>有理数的高精度表示,注意：舍入规则的细节,  有效数字位数</li>
-</ol>
-</li>
-<li><p>3.有理数的整数分数表示法</p>
-</li>
-<li><ol start="4">
-<li>IEEE754 规则 特殊的有理数值</li>
-</ol>
-</li>
-</ul>
-<h3 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h3><h5 id="有m个拿五毛的n个拿一块的（m-gt-x3D-n）时的排列次数等于-有m-1个拿五毛的n个拿一块的排列次数-有m个拿五毛的n-1个拿一块的排列次数"><a href="#有m个拿五毛的n个拿一块的（m-gt-x3D-n）时的排列次数等于-有m-1个拿五毛的n个拿一块的排列次数-有m个拿五毛的n-1个拿一块的排列次数" class="headerlink" title="有m个拿五毛的n个拿一块的（m&gt;&#x3D;n）时的排列次数等于  有m-1个拿五毛的n个拿一块的排列次数 + 有m个拿五毛的n-1个拿一块的排列次数"></a>有m个拿五毛的n个拿一块的（m&gt;&#x3D;n）时的排列次数等于  有m-1个拿五毛的n个拿一块的排列次数 + 有m个拿五毛的n-1个拿一块的排列次数</h5><p>对于此题，采用递归思想，我们可以从最后一个人购票开始考虑，假设（m+n-1）个人已经买好票了，对于第m+n个人他有两种买票情况，持5角买票，或持1元买票，因此得到关系式<strong>solve(m-1,n)<strong>或</strong>solve(m,n-1)</strong>,f是购票函数，而对于第（m+n-1）个人，因为已经假设此时（m+n-2）个人已买好票了，则其买票情况也有两种，持5角买票，或持1元买票，….，最后当第二个人买票时，他有两种买票情况，持5角买票，或持1元买票，最后直到第一个人，也同上述所述。</p>
-<p>　　接下来，我们研究函数出口:</p>
-<p>　　在买票过程中，如果m&lt;n，则一定买票失败，这是第一种递归出口，则直接return。</p>
-<p>　　观察第二个人买票情况可以发现，如果他持的是5角(m&#x3D;1)，则第一个人一定持的是1元，因为m&gt;&#x3D;n,此时n一定为1，此时只有一种情况，…51，这是第二种递归出口，则count++，再执行return。</p>
-<p>　   当买票的人中，持有的是1元的人都没有了，此时剩下的人都持有5角，则只有一种情况，…5555，才能使关系式成立,这是第三种递归出口，count++，再执行return。</p>
-<p>程序如下：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span>  </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span>  </span></span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">f</span><span class="params">(<span class="type">int</span> m, <span class="type">int</span> n)</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    <span class="keyword">if</span>(m &lt; n) <span class="keyword">return</span> <span class="number">0</span>;<span class="comment">//五毛的少于一块的  </span></span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;<span class="comment">//一块的为 0 了，只剩下五毛的  </span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">f</span>(m<span class="number">-1</span>, n) + <span class="built_in">f</span>(m, n<span class="number">-1</span>);<span class="comment">//f(m,n)=f(m-1,n)+f(m,n-1)  </span></span><br><span class="line">&#125;   <span class="comment">//有m个拿五毛的n个拿一块的（m&gt;=n）时的排列次数等于   有m-1个拿五毛的n个拿一块的排列次数+ 有m个拿五毛的n-1个拿一块的排列次数  </span></span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    <span class="type">int</span> m,n;  </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;请输入拿五毛钱的人数：&quot;</span>);  </span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;m);  </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;请输入拿一块钱的人数：&quot;</span>);  </span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);  </span><br><span class="line">    <span class="type">int</span> re = <span class="built_in">f</span>(m,n);  </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;所有顺利完成购票过程的购票次序的种类数:%d\n&quot;</span>,re);  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;  </span><br><span class="line">&#125;  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h3><p><img src="https://i.328888.xyz/2023/01/13/wBAzE.png" class="lazyload placeholder" data-srcset="https://i.328888.xyz/2023/01/13/wBAzE.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="运行结果"></p>
-
-      </div>
-      <div class="post-tags-categories">
-        
-        <div class="tags">
-          
-            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="">
-              数据结构与算法
-            </a>
-          
-        </div>
-        
-      </div>
-      
-        <div class="copyright">
-  <ul class="post-copyright">
-    <li class="post-copyright-author">
-    <strong>author:  </strong>小赛</a>
-    </li>
-    <li class="post-copyright-link">
-    <strong>link:  </strong>
-    <a href="/2023/01/13/假设每位乘客只持有两种币值的货币：5角、1元/" target="_blank" title="公交车标价 公交车票价为5角。假设每位乘客只持有两种币值的货币：5角、1元。">http://example.com/2023/01/13/假设每位乘客只持有两种币值的货币：5角、1元/</a>
-    </li>
-    <li class="post-copyright-license">
-      <strong>Copyright notice:   </strong>
-      All articles on this website, unless otherwise stated, adopt <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
-      reprint policy. If reproduced, please indicate source!
-    </li>
-  </ul>
-<div>
-      
-    </article>
-    <!-- 上一篇文章和下一篇文章 -->
+  <div class="category-header-desc">
     
-      <!-- 文章详情页的上一页和下一页 -->
-<div class="post-nav">
-
-
-
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/11.jpg" class="lazyload placeholder" data-srcset="/medias/11.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-    </div>
-    <a href="/2023/01/14/%E9%80%89%E6%95%B0/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> Prev:
-        <div class="title-text">选数【搜索 深度优先搜索,DFS 素数判断,质数,筛法】</div>
-      </div>
-      
-      <!-- <div class="content">
-        选数【搜索 深度优先搜索,DFS 素数判断,质数,筛法】[NOIP2002 普及组] 选数题目描述已知 n 个整数 x_
-      </div> -->
-    </a>
-  </div>
-
-
-
-  
-  <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/15.jpg" class="lazyload placeholder" data-srcset="/medias/15.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
-    </div>
-    <a href="/2023/01/13/%E7%8C%9C%E5%B9%B4%E9%BE%84/" class="post-nav-link">
-      <div class="title">
-        Next: <i class="fas fa-angle-right"></i>
-        <div class="title-text">猜年龄</div>
-      </div>
-      <!-- <div class="content">
-        猜年龄题目描述：美国数学家维纳(N.Wiener)智力早熟，11岁就上了大学。他曾在1935~1936年应邀来中国清华大
-      </div> -->
-    </a>
-  </div>
-
-</div>
-
-    
-    
-
-    <!-- 打赏 -->
-    
-
-    <!-- 分享 -->
-    
-      <!-- https://github.com/overtrue/share.js -->
-<!-- 文章详情页的分享 -->
-<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-
-<script src="/js/shareJs/social-share.min.js"></script>
-</script>
-
-<style>
-  .social-share {
-    margin: 20px 0;
+      <span class="title" id="category-header-desc"></span>
+      <script>
+  function typedFn() {
+    const el = '#category-header-desc';
+    const type = 'categoryDetail';
+    let desc = '愿你如风，被人温柔以待'
+    var typed = new Typed(el, {
+      strings: [desc],
+      startDelay: 100,
+      typeSpeed: 100,
+      loop: true,
+      backSpeed: 50,
+      showCursor: true
+    });
   }
-</style>
-
-
-    
-    
-    <!-- 评论 -->
-    <!-- 评论 -->
-
-  <div id="myComment">
-    
+  typedFn();
+</script>
       
-<section id="comments" style="padding: 1em;"
-	class="animated bounceInUp">
-	<div id="vcomment" class="comment"></div>
-</section>
-<style>
-	#comments {
-		background: rgba(255,255,255,0.9);
-	}
-	#veditor {
-		background-image: url('https://img.zcool.cn/community/01a253594c71cfa8012193a329a77f.gif');
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: right;
-		background-color: rgba(255, 255, 255, 0);
-		resize: vertical;
-	}
-	#veditor:focus{
-		background-position-y: 200px;
-		transition: all 0.2s ease-in-out 0s;
-	}
-	#vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
-		background-color: #42b983;
-	}
-	.v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
-		color: #42b983;
-		border-color: #42b983;
-	}
-	#vcomment .vcards .vcard .vhead .vsys i {
-		display: none;
-	}
-	/* 底部valine链接 */
-	#vcomment .vpower {
-		display: none;
-	}
-	
-	/* 底下注释是修改 名称和邮箱和网址输入框的样式 */
-	/* #vcomment .vheader {
-		display: flex;
-		justify-content: space-around;
-	}
-	
-	#vcomment .vheader .vnick {
-		width: 31%;
-		border: 2px solid #dedede;
-		padding-left: 10px;
-		padding-right: 10px;
-		border-radius: 5px
-	}
-
-	#vcomment .vheader .vmail {
-		width: 31%;
-		border: 2px solid #dedede;
-		padding-left: 10px;
-		padding-right: 10px;
-		border-radius: 5px
-	}
-
-	#vcomment .vheader .vlink {
-		width: 31%;
-		border: 2px solid #dedede;
-		padding-left: 10px;
-		padding-right: 10px;
-		border-radius: 5px
-	} */
-
-	img.vimg {
-		transition: all 1s;
-		/* 头像旋转时间为 1s */
-	}
-
-	img.vimg:hover {
-		transform: rotate(360deg);
-		-webkit-transform: rotate(360deg);
-		-moz-transform: rotate(360deg);
-		-o-transform: rotate(360deg);
-		-ms-transform: rotate(360deg);
-	}
-
-	#vcomment .vcards .vcard {
-		padding: 15px 20px 0 20px;
-		border-radius: 10px;
-		margin-bottom: 15px;
-		box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
-		transition: all .3s
-	}
-
-	#vcomment .vcards .vcard:hover {
-		box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
-	}
-
-	#vcomment .vcards .vcard .vh .vcard {
-		border: none;
-		box-shadow: none;
-	}
-</style>
-    
   </div>
+  <div class="mask-box"></div>
+</div>
 
-<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
 
-
+<div class="category">
+  <div class="category-name">
+    <div class="name" style="background-color: #E8F8F5;">工具 category</div>
   </div>
+  <!-- 每一篇文章卡片 -->
+  <!-- hash算法 -->
 
-  <!-- 目录 -->
-  
-<aside id='l_side'>
+<section class="posts">
   
     
-      
-        <section class="widget side_blogger">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box circle' target="_blank" rel="noopener" href='http://wangsaisai.uovou.cn/'>
-          <img src='/medias/heada.jpg'/>
+    <article class="post reveal" style="flex-direction: row-reverse;   ">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fas fa-clock" aria-hidden="true"></i>
+            <span class="post-time">2023-01-14</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/2023/01/14/%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8Git/">快速入门Git（Git命令大全）</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li></ul>
+
+            </div>
+            <div class="post-categories">
+              <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
+</div>
+
+
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            <a href="/2023/01/14/%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8Git/" style="background-size: cover; 
+              background-position: center center;">
+              <img class="lazyload lazyload placeholder" src="/medias/6.jpg" class="lazyload placeholder" data-srcset="/medias/6.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+            </a>
+          </div>
+          <div class="post-content">
+            Git是当下最流行的一种版本控制（Revision control）器是一种在开发的过程中用于管理我们对文件、目录或工程等内容的修改历史，方便查看更改历史记录，备份以便恢复以前的版本的软件工程技术。
+
+实现跨区域多人协同开发
+追踪和记载一个
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/2023/01/14/%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8Git/">
+            <i class="iconfont iconmore" pointer style="float: right;  " title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        <a href="/2023/01/14/%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8Git/" style="background-size: cover; 
+          background-position: center center;">
+          <img class="lazyload lazyload placeholder" src="/medias/6.jpg" class="lazyload placeholder" data-srcset="/medias/6.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
         </a>
-      
+      </div>
+    </article>
+  
     
-    
-      <div class='text'>
-        
-          <h2>小赛 同学</h2>
-        
-        
-          <p>小赛同学在努力</p>
+    <article class="post reveal" style="   ">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fas fa-clock" aria-hidden="true"></i>
+            <span class="post-time">2023-01-13</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/2023/01/13/%E5%9C%A8Ubuntu%E4%B8%8B%E7%94%A8Hexo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E8%AF%A6%E8%A7%A3%EF%BC%89-1/">在Ubuntu下用Hexo和github搭建个人博客（详解）</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              <!-- 文章详情页的标签 -->
 
-        
-        
-          <p><span id="jinrishici-sentence">小赛同学|个人博客</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/" rel="tag">web</a></li></ul>
+
+            </div>
+            <div class="post-categories">
+              <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
+</div>
+
+
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            <a href="/2023/01/13/%E5%9C%A8Ubuntu%E4%B8%8B%E7%94%A8Hexo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E8%AF%A6%E8%A7%A3%EF%BC%89-1/" style="background-size: cover; 
+              background-position: center center;">
+              <img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+            </a>
+          </div>
+          <div class="post-content">
+            在Ubuntu下用Hexo和github搭建个人博客（详解）用Hexo和github配合，不用写代码就搭建一套属于自己的个人博客网站（小白也可以尝试）
+Hero还提供了大量主题模版供用户下载。你的博客网站将可以时不时的换一种主题风格，赏心悦
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/2023/01/13/%E5%9C%A8Ubuntu%E4%B8%8B%E7%94%A8Hexo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E8%AF%A6%E8%A7%A3%EF%BC%89-1/">
+            <i class="iconfont iconmore" pointer style="  " title="阅读更多"></i>
+          </a>
+        </div>
       </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="http://wangsaisai.uovou.cn/"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/vipwsai@163.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/Alexander798798"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=725519278"
-              class="social fab fa-qq flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
+      <div class="post-img">
+        <a href="/2023/01/13/%E5%9C%A8Ubuntu%E4%B8%8B%E7%94%A8Hexo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E8%AF%A6%E8%A7%A3%EF%BC%89-1/" style="background-size: cover; 
+          background-position: center center;">
+          <img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+        </a>
       </div>
-    
-  </div>
+    </article>
+  
 </section>
-
-      
-    
-  
-  
-  
-
-  <div class="layout_sticky">    
-    
-      
-<section class="widget side_toc">
-  
-  <header>
-    
-      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="toc-main">
-      <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AC%E4%BA%A4%E8%BD%A6%E6%A0%87%E4%BB%B7-%E5%85%AC%E4%BA%A4%E8%BD%A6%E7%A5%A8%E4%BB%B7%E4%B8%BA5%E8%A7%92%E3%80%82%E5%81%87%E8%AE%BE%E6%AF%8F%E4%BD%8D%E4%B9%98%E5%AE%A2%E5%8F%AA%E6%8C%81%E6%9C%89%E4%B8%A4%E7%A7%8D%E5%B8%81%E5%80%BC%E7%9A%84%E8%B4%A7%E5%B8%81%EF%BC%9A5%E8%A7%92%E3%80%811%E5%85%83%E3%80%82"><span class="toc-text">公交车标价 公交车票价为5角。假设每位乘客只持有两种币值的货币：5角、1元。</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B0%8F%E8%B4%B4%E5%A3%AB%EF%BC%9A"><span class="toc-text">小贴士：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90"><span class="toc-text">题目分析</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9C%89m%E4%B8%AA%E6%8B%BF%E4%BA%94%E6%AF%9B%E7%9A%84n%E4%B8%AA%E6%8B%BF%E4%B8%80%E5%9D%97%E7%9A%84%EF%BC%88m-gt-x3D-n%EF%BC%89%E6%97%B6%E7%9A%84%E6%8E%92%E5%88%97%E6%AC%A1%E6%95%B0%E7%AD%89%E4%BA%8E-%E6%9C%89m-1%E4%B8%AA%E6%8B%BF%E4%BA%94%E6%AF%9B%E7%9A%84n%E4%B8%AA%E6%8B%BF%E4%B8%80%E5%9D%97%E7%9A%84%E6%8E%92%E5%88%97%E6%AC%A1%E6%95%B0-%E6%9C%89m%E4%B8%AA%E6%8B%BF%E4%BA%94%E6%AF%9B%E7%9A%84n-1%E4%B8%AA%E6%8B%BF%E4%B8%80%E5%9D%97%E7%9A%84%E6%8E%92%E5%88%97%E6%AC%A1%E6%95%B0"><span class="toc-text">有m个拿五毛的n个拿一块的（m&gt;&#x3D;n）时的排列次数等于  有m-1个拿五毛的n个拿一块的排列次数 + 有m个拿五毛的n-1个拿一块的排列次数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C"><span class="toc-text">运行结果</span></a></li></ol></li></ol></li></ol> -->
-        <div class="toc"></div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- 手机端目录按钮 -->
-<div id="toc-mobile-btn">
-  <i class="fas fa-list-ul" aria-hidden="true"></i>
 </div>
-
-      
-  <section class="widget side_recent_post">
-    
-  <header>
-    
-      <a style="color: " href='/tags/'><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class='name'>最新文章</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      
-      <!-- hash算法 -->
-      
-      <div class="aside-list">
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/01/14/%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8Git/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/6.jpg" class="lazyload placeholder" data-srcset="/medias/6.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">01-14</span>
-                
-              </div>
-              <a class="post-title" href="/2023/01/14/%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8Git/">快速入门Git（Git命令大全）</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/01/14/%E6%9D%8E%E7%99%BD%E6%89%93%E9%85%92%E5%8A%A0%E5%BC%BA%E7%89%88/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/9.jpg" class="lazyload placeholder" data-srcset="/medias/9.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">01-14</span>
-                
-              </div>
-              <a class="post-title" href="/2023/01/14/%E6%9D%8E%E7%99%BD%E6%89%93%E9%85%92%E5%8A%A0%E5%BC%BA%E7%89%88/">P8786 [蓝桥杯 2022 省 B] 李白打酒加强版【动态规划,dp】</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/01/14/P1880%20%5BNOI1995%5D%20%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/15.jpg" class="lazyload placeholder" data-srcset="/medias/15.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">01-14</span>
-                
-              </div>
-              <a class="post-title" href="/2023/01/14/P1880%20%5BNOI1995%5D%20%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/">石子合并[动态规划]</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/01/14/%E5%8F%96%E6%95%B0%E6%B8%B8%E6%88%8F/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">01-14</span>
-                
-              </div>
-              <a class="post-title" href="/2023/01/14/%E5%8F%96%E6%95%B0%E6%B8%B8%E6%88%8F/">取数游戏 。（搜索 枚举 深度优先搜索,DFS）</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/01/14/%E5%A1%AB%E6%B6%82%E9%A2%9C%E8%89%B2/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">01-14</span>
-                
-              </div>
-              <a class="post-title" href="/2023/01/14/%E5%A1%AB%E6%B6%82%E9%A2%9C%E8%89%B2/">填涂颜色（搜索 广度优先搜索,BFS 队列）</a>
-            </div>
-          </div>
-        
-      </div>
-    </div>
-  </section>
-
-    
-  </div>
-</aside>
-
-
-  <!-- 图片放大 Wrap images with fancybox support -->
-  <script src="/js/wrapImage.js"></script>
-</div>
-
-<!-- 文章详情页背景图 -->
-<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
-	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
-	<transition-group tag="ul" :name="names">
-		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
-			<img :src="image" class="bg-swiper-img no-lazy">
-		</li>
-	</transition-group>
-</div>
-<script>
-	var vm = new Vue({
-		el: '#appBgSwiper',
-		data: {
-			names: '' || 'fade' || 'fade', // translate-fade fade
-			mark: 0,
-			img: [],
-			bgColor: '',
-			time: null
-		},
-		methods: {   //添加方法
-			change(i, m) {
-				if (i > m) {
-					// this.names = 'fade';
-				} else if (i < m) {
-					// this.names = 'fade';
-				} else {
-					return;
-				}
-				this.mark = i;
-			},
-			prev() {
-				// this.names = 'fade';
-				this.mark--;
-				if (this.mark === -1) {
-					this.mark = 3;
-					return
-				}
-			},
-			next() {
-				// this.names = 'fade';
-				this.mark++;
-				if (this.mark === this.img.length) {
-					this.mark = 0;
-					return
-				}
-			},
-			autoPlay() {
-				// this.names = 'fade';
-				this.mark++;
-				if (this.mark === this.img.length) {
-					this.mark = 0;
-					return
-				}
-			},
-			play() {
-				let bgImgDelay = '' || '180000'
-				let delay = parseInt(bgImgDelay) || 180000;
-				this.time = setInterval(this.autoPlay, delay);
-			},
-			enter() {
-				clearInterval(this.time);
-			},
-			leave() {
-				this.play();
-			}
-		},
-		created() {
-			this.play()
-		},
-		beforeDestroy() {
-			clearInterval(this.time);
-		},
-		mounted() {
-			let prop = '' || '';
-			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
-			if (isImg) {
-				let img = prop.split(',');
-				let configRoot = '/'
-				let arrImg = [];
-				img.forEach(el => {
-					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
-					var objExp = new RegExp(Expression);
-
-					if (objExp.test(el)) {
-						// http or https
-						arrImg.push(el);
-					} else {
-						// 非http or https开头
-						// 本地文件
-						let firstStr = el.charAt(0);
-						if (firstStr == '/') {
-							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
-						}
-						el = configRoot + el;
-						arrImg.push(el);
-					}
-				})
-				this.img = arrImg;
-			} else {
-				this.bgColor = prop;
-			}
-		}
-	})
-</script>
-
-<style>
-	.bg-swiper-box {
-		position: absolute;
-		display: block;
-		width: 100%;
-		height: 100%;
-	}
-
-	.bg-swiper-img {
-		object-fit: cover;
-		width: 100%;
-		height: 100%;
-	}
-</style>
-
-
-
-
-  <script>
-  function loadMermaid() {
-    if (document.getElementsByClassName('mermaid').length) {
-      if (window.mermaidJsLoad) mermaid.init()
-      else {
-        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
-          window.mermaidJsLoad = true
-          mermaid.initialize({
-            theme: 'default',
-          })
-          if ('true') {
-            mermaid.init();
-          }
-        })
-      }
-    }
-  };
-  document.addEventListener("DOMContentLoaded", function () {
-    loadMermaid();
-  })
-
-  document.addEventListener('pjax:complete', function () {
-    loadMermaid();
-  })
+<div class="w-70">
   
-</script>
-
+</div>
 
       </main>
     </div>
