@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-01-15T13:07:28.000Z</updated>
+  <updated>2023-01-16T10:25:14.741Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>程序员必知 -- 代码规范</title>
+    <link href="http://example.com/2023/01/16/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BF%85%E7%9F%A5%20--%20%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"/>
+    <id>http://example.com/2023/01/16/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BF%85%E7%9F%A5%20--%20%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</id>
+    <published>2023-01-16T08:56:35.000Z</published>
+    <updated>2023-01-16T10:25:14.741Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;程序员必知-–-代码规范&quot;&gt;&lt;a href=&quot;#程序员必知-–-代码规范&quot; class=&quot;headerlink&quot; title=&quot;程序员必知 – 代码规范&quot;&gt;&lt;/a&gt;程序员必知 –</summary>
+        
+      
+    
+    
+    
+    <category term="综合" scheme="http://example.com/categories/%E7%BB%BC%E5%90%88/"/>
+    
+    
+    <category term="综合" scheme="http://example.com/tags/%E7%BB%BC%E5%90%88/"/>
+    
+  </entry>
   
   <entry>
     <title>交换瓶子</title>
