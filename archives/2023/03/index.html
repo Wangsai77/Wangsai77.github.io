@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>在Ubuntu下快速使用Oracle数据库（详解） | 小赛同学|个人博客</title>
+  <title>archives: 2023/3 | 小赛同学|个人博客</title>
 
   <link rel="icon" type="image/jpeg" href="/medias/heada.jpg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -522,732 +522,106 @@
     
 </header>
         <!-- 内容区域 -->
-        
- <!-- prismjs 代码高亮 -->
- 
-
-
-<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
-
-
-  <!-- 文章详情页顶部图片和标题 -->
-
-
-
-
-<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/medias/11.jpg')">
-  <div class="post-detail-header-mask"></div>
-  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
-  
-  <div class="post-detail-header_info-box">
-    <div class="title-box">
-      <span class="title">
-        在Ubuntu下快速使用Oracle数据库（详解）
-      </span>
-    </div>
-    
-    
-      
-        <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> Published in：2023-02-22 |
-        </span>
-      
-
-      
-        <span class="post-detail-header_categories">
-          <i class="iconfont iconbookmark1"></i> category：
-          
-            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-detail-header_category">
-              工具
-            </a>
-          
-        </span>
-      
-
-      
-    
+        <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
+<div class="bg-light-floor-archive" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
+<div class="archive-header" style="background-image:url('https://pic1.zhimg.com/80/v2-1414b3a4b205e19060db18a20d08723a_1440w.jpg?source=1940ef5c')">
+  <div class="archive-header-title">
+    archive
   </div>
+  <div class="archive-header-desc">
   
-  
-    <script src="/js/bubble/bubble.js"></script>
-  
-</div>
-
-
-
-
-
-<div class="post-detail-content post-row" 
-  style="padding-top: 0px;">
-  <div class="main-content">
-    <article class="post post-detail">
-      <div class="post-content">
-        <p>​		因为在Linux中安装oracle非常麻烦，相信每个人也会遇到各种问题，为了方便所以选择用docker安装，并做详细记录，为以后需要之时拿来再看。</p>
-<h3 id="1、安装docker环境。"><a href="#1、安装docker环境。" class="headerlink" title="1、安装docker环境。"></a>1、安装docker环境。</h3><h3 id="2、拉取Oracle镜像。"><a href="#2、拉取Oracle镜像。" class="headerlink" title="2、拉取Oracle镜像。"></a>2、拉取Oracle镜像。</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker pull registry.cn-hangzhou.aliyuncs.com/helowin/oracle_11g</span><br></pre></td></tr></table></figure>
-
-<p>这个镜像大约6G左右</p>
-<p><img src="https://i.328888.xyz/2023/02/22/xtIoX.png" class="lazyload placeholder" data-srcset="https://i.328888.xyz/2023/02/22/xtIoX.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230113180125853"></p>
-<h3 id="3、查看镜像是否正确安装"><a href="#3、查看镜像是否正确安装" class="headerlink" title="3、查看镜像是否正确安装"></a>3、查看镜像是否正确安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker images</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.328888.xyz/2023/02/22/xtRFc.png" class="lazyload placeholder" data-srcset="https://i.328888.xyz/2023/02/22/xtRFc.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image"></p>
-<h3 id="4、创建Orcal的容器"><a href="#4、创建Orcal的容器" class="headerlink" title="4、创建Orcal的容器"></a>4、创建Orcal的容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run -d -p 1521:1521 --name oracle11g registry.cn-hangzhou.aliyuncs.com/helowin/oracle_11g</span><br></pre></td></tr></table></figure>
-
-<p> 如果创建成功能会返回容器id</p>
-<p><img src="https://i.328888.xyz/2023/02/22/xtEoq.png" class="lazyload placeholder" data-srcset="https://i.328888.xyz/2023/02/22/xtEoq.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="images"></p>
-<blockquote>
-<p>可以写成shell脚本，下次打开oracle数据库就可以一条命令创建容器。</p>
-<p>shell脚本如下：</p>
-<p># BEGIN ANSIBLE MANAGED BLOCK<br>#!&#x2F;bin&#x2F;bash<br>docker rm -f oracle11;<br>docker run -it -d -p 1521:1521 -v &#x2F;data&#x2F;oracle:&#x2F;data&#x2F;oracle –name  oracle11g registry.cn-hangzhou.aliyuncs.com&#x2F;helowin&#x2F;oracle_11g<br># END ANSIBLE MANAGED BLOCK</p>
-<p>但为了保存上一次容易的配置值，是不建议写这个shell脚本的，下次打开直接用docker start oracle11命令打开。</p>
-</blockquote>
-<h3 id="5、镜像配置"><a href="#5、镜像配置" class="headerlink" title="5、镜像配置"></a>5、镜像配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker <span class="built_in">exec</span> -it oracle11g bash</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sqlplus <span class="operator">/</span>nolog     <span class="comment">--进行软连接，发现没有该命令，所以切换root用户。</span></span><br><span class="line">su root            <span class="comment">--输入密码：helowin</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.328888.xyz/2023/02/22/xtstU.png" class="lazyload placeholder" data-srcset="https://i.328888.xyz/2023/02/22/xtstU.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image">    </p>
-<ul>
-<li>编辑profile文件配置ORACLE环境变量</li>
-</ul>
-<p>​      打开：vi &#x2F;etc&#x2F;profile ，在文件最后写上下面内容：</p>
-<p>​      **export ORACLE_HOME&#x3D;&#x2F;home&#x2F;oracle&#x2F;app&#x2F;oracle&#x2F;product&#x2F;11.2.0&#x2F;dbhome_2 **</p>
-<p>​      <strong>export ORACLE_SID&#x3D;helowin</strong></p>
-<p>​     <strong>export PATH&#x3D;$ORACLE_HOME&#x2F;bin:$PATH</strong></p>
-<ul>
-<li><p>保存后执行source &#x2F;etc&#x2F;profile 加载环境变量；</p>
-</li>
-<li><p>创建软连接</p>
-</li>
-<li><p>&#96;&#96;&#96;bash<br>ln -s $ORACLE_HOME&#x2F;bin&#x2F;sqlplus &#x2F;usr&#x2F;bin   #创建软链接<br>su - oracle    #切换到oracle 用户</p>
-</li>
-</ul>
-<p><img src="https://i.328888.xyz/2023/02/22/xtvcv.png" class="lazyload placeholder" data-srcset="https://i.328888.xyz/2023/02/22/xtvcv.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
-<h3 id="6、登录sqlplus并修改sys、system用户密码"><a href="#6、登录sqlplus并修改sys、system用户密码" class="headerlink" title="6、登录sqlplus并修改sys、system用户密码"></a>6、登录sqlplus并修改sys、system用户密码</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sqlplus <span class="operator">/</span>nolog   <span class="comment">--登录</span></span><br><span class="line">conn <span class="operator">/</span><span class="keyword">as</span> sysdba  <span class="comment">--</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">user</span> <span class="keyword">system</span> identified <span class="keyword">by</span> <span class="keyword">system</span>;<span class="comment">--修改system用户账号密码；</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">user</span> sys identified <span class="keyword">by</span> <span class="keyword">system</span>;<span class="comment">--修改sys用户账号密码；</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> test identified <span class="keyword">by</span> test; <span class="comment">-- 创建内部管理员账号密码；</span></span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">connect</span>,resource,dba <span class="keyword">to</span> test; <span class="comment">--将dba权限授权给内部管理员账号和密码；</span></span><br><span class="line"><span class="keyword">ALTER</span> PROFILE <span class="keyword">DEFAULT</span> LIMIT PASSWORD_LIFE_TIME UNLIMITED; <span class="comment">--修改密码规则策略为密码永不过期；</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">system</span> <span class="keyword">set</span> processes<span class="operator">=</span><span class="number">1000</span> <span class="keyword">scope</span><span class="operator">=</span>spfile; <span class="comment">--修改数据库最大连接数据；</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="7、重启数据库"><a href="#7、重启数据库" class="headerlink" title="7、重启数据库"></a>7、重启数据库</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">conn <span class="operator">/</span><span class="keyword">as</span> sysdba</span><br><span class="line">shutdown immediate; <span class="comment">--关闭数据库</span></span><br><span class="line">startup;            <span class="comment">--启动数据库</span></span><br><span class="line"></span><br><span class="line">exit：              <span class="comment">--退出软链接</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="8、下次登陆可能遇到的问题"><a href="#8、下次登陆可能遇到的问题" class="headerlink" title="8、下次登陆可能遇到的问题"></a>8、下次登陆可能遇到的问题</h3><p><strong>进入docker的oracle容器</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it oracle11g bash</span><br></pre></td></tr></table></figure>
-
-<p><strong>启动sqlplus</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlplus <span class="operator">/</span>nolog</span><br></pre></td></tr></table></figure>
-
-<p>此时报错</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Error 6 initializing SQL*Plus</span><br><span class="line">SP2-0667: Message file sp1&lt;lang&gt;.msb not found</span><br><span class="line">SP2-0750: You may need to set ORACLE_HOME to your Oracle software directory</span><br><span class="line">123</span><br></pre></td></tr></table></figure>
-
-<h4 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h4><p>在oracle容器中，重新登陆oracle用户。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su - oracle</span><br></pre></td></tr></table></figure>
-
-<p>重新启动sqlplus</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[oracle@6b0b62f5771d ~]$ sqlplus /nolog</span><br><span class="line"></span><br><span class="line">SQL*Plus: Release 11.2.0.1.0 Production on Fri Jan 7 14:41:24 2022</span><br><span class="line"></span><br><span class="line">Copyright (c) 1982, 2009, Oracle.  All rights reserved.</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">SQL&gt; </span></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.328888.xyz/2023/02/22/xW2dw.png" class="lazyload placeholder" data-srcset="https://i.328888.xyz/2023/02/22/xW2dw.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
-<p>成功~</p>
-<h3 id="9、登陆方式"><a href="#9、登陆方式" class="headerlink" title="9、登陆方式"></a>9、登陆方式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo docker start [image_name]</span><br><span class="line">sudo  docker <span class="built_in">exec</span> -it [inage_name] bash</span><br></pre></td></tr></table></figure>
-
-
-      </div>
-      <div class="post-tags-categories">
-        
-        <div class="tags">
-          
-            <a href="/tags/web/" class="">
-              web
-            </a>
-          
-        </div>
-        
-      </div>
-      
-        <div class="copyright">
-  <ul class="post-copyright">
-    <li class="post-copyright-author">
-    <strong>author:  </strong>小赛</a>
-    </li>
-    <li class="post-copyright-link">
-    <strong>link:  </strong>
-    <a href="/2023/02/22/在Ubuntu下快速使用Oracle/" target="_blank" title="在Ubuntu下快速使用Oracle数据库（详解）">http://example.com/2023/02/22/在Ubuntu下快速使用Oracle/</a>
-    </li>
-    <li class="post-copyright-license">
-      <strong>Copyright notice:   </strong>
-      All articles on this website, unless otherwise stated, adopt <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
-      reprint policy. If reproduced, please indicate source!
-    </li>
-  </ul>
-<div>
-      
-    </article>
-    <!-- 上一篇文章和下一篇文章 -->
-    
-      <!-- 文章详情页的上一页和下一页 -->
-<div class="post-nav">
-
-
-
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/11.jpg" class="lazyload placeholder" data-srcset="/medias/11.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-    </div>
-    <a href="/2023/03/01/oracle%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4-md/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> Prev:
-        <div class="title-text">Oracle数据库命令大全（笔记收藏）</div>
-      </div>
-      
-      <!-- <div class="content">
-        ​		
-[Oracle] 日常基本命令1、用户与权限创建用户12create user 用户名 identified b
-      </div> -->
-    </a>
-  </div>
-
-
-
-  
-  <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/5.jpg" class="lazyload placeholder" data-srcset="/medias/5.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
-    </div>
-    <a href="/2023/01/16/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BF%85%E7%9F%A5%20--%20%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/" class="post-nav-link">
-      <div class="title">
-        Next: <i class="fas fa-angle-right"></i>
-        <div class="title-text">程序员必知 -- 代码规范</div>
-      </div>
-      <!-- <div class="content">
-        程序员必知 – 代码规范作为一个优秀的程序员，肯定希望能写出一手看起来既赏心悦目又利于理解的好代码。
-要既方便日后自己回
-      </div> -->
-    </a>
-  </div>
-
-</div>
-
-    
-    
-
-    <!-- 打赏 -->
-    
-
-    <!-- 分享 -->
-    
-      <!-- https://github.com/overtrue/share.js -->
-<!-- 文章详情页的分享 -->
-<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-
-<script src="/js/shareJs/social-share.min.js"></script>
-</script>
-
-<style>
-  .social-share {
-    margin: 20px 0;
+  <span class="title" id="archive-header-desc"></span>
+  <script>
+  function typedFn() {
+    const el = '#archive-header-desc';
+    const type = 'archive';
+    let desc = '愿你如风，被人温柔以待'
+    var typed = new Typed(el, {
+      strings: [desc],
+      startDelay: 100,
+      typeSpeed: 100,
+      loop: true,
+      backSpeed: 50,
+      showCursor: true
+    });
   }
-</style>
-
-
-    
-    
-    <!-- 评论 -->
-    <!-- 评论 -->
-
-  <div id="myComment">
-    
-      
-<section id="comments" style="padding: 1em;"
-	class="animated bounceInUp">
-	<div id="vcomment" class="comment"></div>
-</section>
-<style>
-	#comments {
-		background: rgba(255,255,255,0.9);
-	}
-	#veditor {
-		background-image: url('/');
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: right;
-		background-color: rgba(255, 255, 255, 0);
-		resize: vertical;
-	}
-	#veditor:focus{
-		background-position-y: 200px;
-		transition: all 0.2s ease-in-out 0s;
-	}
-	#vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
-		background-color: #42b983;
-	}
-	.v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
-		color: #42b983;
-		border-color: #42b983;
-	}
-	#vcomment .vcards .vcard .vhead .vsys i {
-		display: none;
-	}
-	/* 底部valine链接 */
-	#vcomment .vpower {
-		display: none;
-	}
-	
-	/* 底下注释是修改 名称和邮箱和网址输入框的样式 */
-	/* #vcomment .vheader {
-		display: flex;
-		justify-content: space-around;
-	}
-	
-	#vcomment .vheader .vnick {
-		width: 31%;
-		border: 2px solid #dedede;
-		padding-left: 10px;
-		padding-right: 10px;
-		border-radius: 5px
-	}
-
-	#vcomment .vheader .vmail {
-		width: 31%;
-		border: 2px solid #dedede;
-		padding-left: 10px;
-		padding-right: 10px;
-		border-radius: 5px
-	}
-
-	#vcomment .vheader .vlink {
-		width: 31%;
-		border: 2px solid #dedede;
-		padding-left: 10px;
-		padding-right: 10px;
-		border-radius: 5px
-	} */
-
-	img.vimg {
-		transition: all 1s;
-		/* 头像旋转时间为 1s */
-	}
-
-	img.vimg:hover {
-		transform: rotate(360deg);
-		-webkit-transform: rotate(360deg);
-		-moz-transform: rotate(360deg);
-		-o-transform: rotate(360deg);
-		-ms-transform: rotate(360deg);
-	}
-
-	#vcomment .vcards .vcard {
-		padding: 15px 20px 0 20px;
-		border-radius: 10px;
-		margin-bottom: 15px;
-		box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
-		transition: all .3s
-	}
-
-	#vcomment .vcards .vcard:hover {
-		box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
-	}
-
-	#vcomment .vcards .vcard .vh .vcard {
-		border: none;
-		box-shadow: none;
-	}
-</style>
-    
+  typedFn();
+</script>
+  
   </div>
-
-<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
-
-
-  </div>
-
-  <!-- 目录 -->
-  
-<aside id='l_side'>
-  
-    
-      
-        <section class="widget side_blogger">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box circle' target="_blank" rel="noopener" href='https://vipwsai.top'>
-          <img src='/medias/heada.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>小赛 同学</h2>
-        
-        
-          <p>小赛同学在努力</p>
-
-        
-        
-          <p><span id="jinrishici-sentence">小赛同学|个人博客</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="https://vipwsai.top"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/vipwsai@163.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/Wangsai77"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=725519278"
-              class="social fab fa-qq flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-      
-    
-  
-  
-  
-
-  <div class="layout_sticky">    
-    
-      
-<section class="widget side_toc">
-  
-  <header>
-    
-      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="toc-main">
-      <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E5%AE%89%E8%A3%85docker%E7%8E%AF%E5%A2%83%E3%80%82"><span class="toc-text">1、安装docker环境。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E6%8B%89%E5%8F%96Oracle%E9%95%9C%E5%83%8F%E3%80%82"><span class="toc-text">2、拉取Oracle镜像。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E6%9F%A5%E7%9C%8B%E9%95%9C%E5%83%8F%E6%98%AF%E5%90%A6%E6%AD%A3%E7%A1%AE%E5%AE%89%E8%A3%85"><span class="toc-text">3、查看镜像是否正确安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E3%80%81%E5%88%9B%E5%BB%BAOrcal%E7%9A%84%E5%AE%B9%E5%99%A8"><span class="toc-text">4、创建Orcal的容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5%E3%80%81%E9%95%9C%E5%83%8F%E9%85%8D%E7%BD%AE"><span class="toc-text">5、镜像配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6%E3%80%81%E7%99%BB%E5%BD%95sqlplus%E5%B9%B6%E4%BF%AE%E6%94%B9sys%E3%80%81system%E7%94%A8%E6%88%B7%E5%AF%86%E7%A0%81"><span class="toc-text">6、登录sqlplus并修改sys、system用户密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7%E3%80%81%E9%87%8D%E5%90%AF%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">7、重启数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8%E3%80%81%E4%B8%8B%E6%AC%A1%E7%99%BB%E9%99%86%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">8、下次登陆可能遇到的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3"><span class="toc-text">解决</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9%E3%80%81%E7%99%BB%E9%99%86%E6%96%B9%E5%BC%8F"><span class="toc-text">9、登陆方式</span></a></li></ol> -->
-        <div class="toc"></div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- 手机端目录按钮 -->
-<div id="toc-mobile-btn">
-  <i class="fas fa-list-ul" aria-hidden="true"></i>
+  <div class="mask-box"></div>
 </div>
 
+<div class="archive-video">
+  <video class="full-video" autoplay loop muted>
+      <source style="width: 100%;height: 100vh;" src="/">
+  </video>
+  <div class="video-header-title">
+    archive
+  </div>
+  <div class="video-header-desc">
+  
+      <span class="title" id="archive-video-header-desc"></span>
+      <script>
+  function typedFn() {
+    const el = '#archive-video-header-desc';
+    const type = 'archive';
+    let desc = '愿你如风，被人温柔以待'
+    var typed = new Typed(el, {
+      strings: [desc],
+      startDelay: 100,
+      typeSpeed: 100,
+      loop: true,
+      backSpeed: 50,
+      showCursor: true
+    });
+  }
+  typedFn();
+</script>
       
-  <section class="widget side_recent_post">
-    
-  <header>
-    
-      <a style="color: " href='/tags/'><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class='name'>最新文章</span></a>
-    
-  </header>
+  </div>
+  <div class="mask-box"></div>
+</div>
+
+<!-- hash算法 -->
 
 
-    <div class='content'>
-      
-      <!-- hash算法 -->
-      
-      <div class="aside-list">
+<div class="archive-main">
+  <section class="archive">
+    <div class="archive-content">
+      <ul class="post-archive">
         
-          <div class="aside-list-item">
+        
+          
             
+            <div class="year" data-aos="zoom-in-up">
+                <div class="bullet"></div>
+                <a href="/archives/2023">2023</a>
+            </div>
+          
+          <li class="post-item" data-aos="fade-left">
             
-            
-
             <div class="post-img-box">
               <a href="/2023/03/01/oracle%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4-md/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/11.jpg" class="lazyload placeholder" data-srcset="/medias/11.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" src="/medias/11.jpg" class="lazyload placeholder" data-srcset="/medias/11.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
               <div>
-                
-                  <span class="post-date">03-01</span>
-                
+                <span class="post-date">03-01</span>
               </div>
               <a class="post-title" href="/2023/03/01/oracle%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4-md/">Oracle数据库命令大全（笔记收藏）</a>
             </div>
-          </div>
+          </li>
         
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/02/22/%E5%9C%A8Ubuntu%E4%B8%8B%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8Oracle/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/11.jpg" class="lazyload placeholder" data-srcset="/medias/11.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">02-22</span>
-                
-              </div>
-              <a class="post-title" href="/2023/02/22/%E5%9C%A8Ubuntu%E4%B8%8B%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8Oracle/">在Ubuntu下快速使用Oracle数据库（详解）</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/01/16/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BF%85%E7%9F%A5%20--%20%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/5.jpg" class="lazyload placeholder" data-srcset="/medias/5.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">01-16</span>
-                
-              </div>
-              <a class="post-title" href="/2023/01/16/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BF%85%E7%9F%A5%20--%20%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">程序员必知 -- 代码规范</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/01/14/%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8Git/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/6.jpg" class="lazyload placeholder" data-srcset="/medias/6.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">01-14</span>
-                
-              </div>
-              <a class="post-title" href="/2023/01/14/%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8Git/">快速入门Git（Git命令大全）</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/01/13/%E5%9C%A8Ubuntu%E4%B8%8B%E7%94%A8Hexo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E8%AF%A6%E8%A7%A3%EF%BC%89-1/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">01-13</span>
-                
-              </div>
-              <a class="post-title" href="/2023/01/13/%E5%9C%A8Ubuntu%E4%B8%8B%E7%94%A8Hexo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E8%AF%A6%E8%A7%A3%EF%BC%89-1/">在Ubuntu下用Hexo和github搭建个人博客（详解）</a>
-            </div>
-          </div>
-        
-      </div>
+      </ul>
     </div>
   </section>
-
+  <div class="w-70">
     
   </div>
-</aside>
-
-
-  <!-- 图片放大 Wrap images with fancybox support -->
-  <script src="/js/wrapImage.js"></script>
 </div>
-
-<!-- 文章详情页背景图 -->
-<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
-	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
-	<transition-group tag="ul" :name="names">
-		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
-			<img :src="image" class="bg-swiper-img no-lazy">
-		</li>
-	</transition-group>
-</div>
-<script>
-	var vm = new Vue({
-		el: '#appBgSwiper',
-		data: {
-			names: '' || 'fade' || 'fade', // translate-fade fade
-			mark: 0,
-			img: [],
-			bgColor: '',
-			time: null
-		},
-		methods: {   //添加方法
-			change(i, m) {
-				if (i > m) {
-					// this.names = 'fade';
-				} else if (i < m) {
-					// this.names = 'fade';
-				} else {
-					return;
-				}
-				this.mark = i;
-			},
-			prev() {
-				// this.names = 'fade';
-				this.mark--;
-				if (this.mark === -1) {
-					this.mark = 3;
-					return
-				}
-			},
-			next() {
-				// this.names = 'fade';
-				this.mark++;
-				if (this.mark === this.img.length) {
-					this.mark = 0;
-					return
-				}
-			},
-			autoPlay() {
-				// this.names = 'fade';
-				this.mark++;
-				if (this.mark === this.img.length) {
-					this.mark = 0;
-					return
-				}
-			},
-			play() {
-				let bgImgDelay = '' || '180000'
-				let delay = parseInt(bgImgDelay) || 180000;
-				this.time = setInterval(this.autoPlay, delay);
-			},
-			enter() {
-				clearInterval(this.time);
-			},
-			leave() {
-				this.play();
-			}
-		},
-		created() {
-			this.play()
-		},
-		beforeDestroy() {
-			clearInterval(this.time);
-		},
-		mounted() {
-			let prop = '' || '';
-			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
-			if (isImg) {
-				let img = prop.split(',');
-				let configRoot = '/'
-				let arrImg = [];
-				img.forEach(el => {
-					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
-					var objExp = new RegExp(Expression);
-
-					if (objExp.test(el)) {
-						// http or https
-						arrImg.push(el);
-					} else {
-						// 非http or https开头
-						// 本地文件
-						let firstStr = el.charAt(0);
-						if (firstStr == '/') {
-							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
-						}
-						el = configRoot + el;
-						arrImg.push(el);
-					}
-				})
-				this.img = arrImg;
-			} else {
-				this.bgColor = prop;
-			}
-		}
-	})
-</script>
-
-<style>
-	.bg-swiper-box {
-		position: absolute;
-		display: block;
-		width: 100%;
-		height: 100%;
-	}
-
-	.bg-swiper-img {
-		object-fit: cover;
-		width: 100%;
-		height: 100%;
-	}
-</style>
-
-
-
-
-  <script>
-  function loadMermaid() {
-    if (document.getElementsByClassName('mermaid').length) {
-      if (window.mermaidJsLoad) mermaid.init()
-      else {
-        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
-          window.mermaidJsLoad = true
-          mermaid.initialize({
-            theme: 'default',
-          })
-          if ('true') {
-            mermaid.init();
-          }
-        })
-      }
-    }
-  };
-  document.addEventListener("DOMContentLoaded", function () {
-    loadMermaid();
-  })
-
-  document.addEventListener('pjax:complete', function () {
-    loadMermaid();
-  })
-  
-</script>
-
 
       </main>
     </div>
